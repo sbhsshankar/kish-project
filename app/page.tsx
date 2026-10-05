@@ -1,69 +1,239 @@
-import Image from "next/image";
+"use client";
+
+import { useMemo, useState } from "react";
+
+type Item = { name: string; sub: string; icon: string };
+type Plan = { budget: string; title: string; people: string; included: string[] };
+
+const events: Item[] = [
+  { name: "Destination Wedding", sub: "A celebration with a place of its own", icon: "💍" },
+  { name: "Engagement", sub: "Begin the beautiful chapter", icon: "💫" },
+  { name: "Birthday", sub: "Make the day feel unforgettable", icon: "🎂" },
+  { name: "Baby Shower", sub: "A joyful welcome to a new beginning", icon: "🪷" },
+  { name: "Family Function", sub: "Bring everyone together", icon: "👨‍👩‍👧‍👦" },
+  { name: "Corporate", sub: "Meet, celebrate and connect", icon: "🏛️" },
+  { name: "Cultural Event", sub: "Tradition, art and celebration", icon: "🥁" },
+  { name: "Private Party", sub: "Your people. Your kind of Sandadi.", icon: "✨" },
+];
+
+const destinations: Item[] = [
+  { name: "River Bay", sub: "Water, breeze and open horizons", icon: "🌊" },
+  { name: "Kobbari Thota", sub: "Coconut groves with Godavari soul", icon: "🌴" },
+  { name: "Paddy Fields", sub: "Golden fields and endless skies", icon: "🌾" },
+  { name: "River Island", sub: "A celebration surrounded by water", icon: "🏝️" },
+  { name: "Beach", sub: "Sunset celebrations by the shore", icon: "🌅" },
+  { name: "Backwaters", sub: "Quiet waters and intimate moments", icon: "🛶" },
+  { name: "Resort", sub: "Comfort, celebration and stay", icon: "🏨" },
+  { name: "Temple", sub: "A sacred setting for meaningful moments", icon: "🪔" },
+];
+
+const services: Item[] = [
+  { name: "Decor", sub: "From traditional to grand", icon: "🌸" },
+  { name: "Catering", sub: "Menus made for your celebration", icon: "🍽️" },
+  { name: "Photography", sub: "Every moment, beautifully remembered", icon: "📸" },
+  { name: "Sound & Music", sub: "Bring the celebration alive", icon: "🎶" },
+  { name: "Travel", sub: "Guest movement made easy", icon: "🚐" },
+  { name: "Stay", sub: "Comfort for your people", icon: "🛏️" },
+  { name: "Makeup", sub: "Look your best for the moment", icon: "💄" },
+  { name: "Tent House", sub: "Structure, shade and celebration", icon: "⛺" },
+];
+
+const packages: Plan[] = [
+  { budget: "₹50K", title: "Beautiful Beginnings", people: "Up to 50 guests", included: ["Venue setup", "Essential decor", "Food arrangement", "Event coordination"] },
+  { budget: "₹1L", title: "Grand Gathering", people: "Up to 100 guests", included: ["Venue + decor", "Curated food menu", "Sound setup", "Event management"] },
+  { budget: "₹2L", title: "Royal Celebration", people: "Up to 200 guests", included: ["Premium venue", "Signature decor", "Catering", "Photography", "Sound + management"] },
+  { budget: "₹5L", title: "Destination Sandadi", people: "Up to 500 guests", included: ["Destination venue", "Luxury decor", "Full catering", "Photo + sound", "Travel/stay coordination", "Dedicated management"] },
+];
+
+function scrollToId(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function Home() {
+  const [event, setEvent] = useState("");
+  const [destination, setDestination] = useState("");
+  const [budget, setBudget] = useState("");
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [plannerOpen, setPlannerOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const selectedPackage = useMemo(() => packages.find((p) => p.budget === budget), [budget]);
+
+  const toggleService = (name: string) => {
+    setSelectedServices((current) =>
+      current.includes(name) ? current.filter((x) => x !== name) : [...current, name]
+    );
+  };
+
+  const startPlanning = () => {
+    setSubmitted(false);
+    setPlannerOpen(true);
+  };
+
+  const completePlan = () => {
+    setSubmitted(true);
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen overflow-x-hidden bg-[#170406] text-[#FFF7D0]">
+      <div className="gold-dust" aria-hidden="true" />
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#D4A72C]/20 bg-[#170406]/80 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+          <button onClick={() => scrollToId("home")} className="text-left">
+            <div className="telugu-logo text-3xl leading-tight">సందడి</div>
+            <div className="mt-0.5 text-[9px] tracking-[0.35em] text-[#E4C36A]">DESTINATION IN GODAVARI</div>
+          </button>
+          <nav className="hidden items-center gap-7 text-xs uppercase tracking-[0.18em] text-[#E8D8AD] md:flex">
+            <button onClick={() => scrollToId("events")} className="nav-link">Events</button>
+            <button onClick={() => scrollToId("destinations")} className="nav-link">Destinations</button>
+            <button onClick={() => scrollToId("packages")} className="nav-link">Packages</button>
+            <button onClick={() => scrollToId("services")} className="nav-link">Services</button>
+          </nav>
+          <button onClick={startPlanning} className="gold-button hidden sm:block">Plan Your Sandadi</button>
+        </div>
+      </header>
+
+      <section id="home" className="hero relative flex min-h-screen items-center justify-center px-5 pt-24">
+        <div className="hero-orb hero-orb-one" />
+        <div className="hero-orb hero-orb-two" />
+        <div className="absolute inset-5 rounded-[28px] border border-[#D4A72C]/20 md:inset-8" />
+        <div className="absolute inset-8 rounded-[22px] border border-[#FFF0A0]/10 md:inset-12" />
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <div className="mb-7 animate-fade-up text-xs font-medium uppercase tracking-[0.45em] text-[#F2D47A]">A destination for every celebration</div>
+          <div className="ornament mx-auto mb-4">✦</div>
+          <div className="overflow-visible px-4 py-4">
+            <h1 className="telugu-hero leading-[1.35]">సందడి</h1>
+          </div>
+          <p className="mt-2 text-sm font-semibold tracking-[0.42em] text-[#FFD34E] md:text-base">DESTINED IN GODAVARI</p>
+          <div className="mx-auto mt-8 h-px w-28 bg-gradient-to-r from-transparent via-[#FFD34E] to-transparent" />
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-[#EADBB8] md:text-xl">
+            Where every celebration finds its place, and every moment becomes a memory.
+            <br className="hidden md:block" /> Come for the destination. Leave with a story.
+          </p>
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <button onClick={startPlanning} className="gold-button large">Plan Your Event</button>
+            <button onClick={() => scrollToId("destinations")} className="outline-button large">Explore Destinations <span>↓</span></button>
+          </div>
+          <div className="mx-auto mt-16 max-w-3xl rounded-3xl border border-[#D4A72C]/25 bg-black/20 p-3 shadow-2xl">
+            <div className="video-placeholder">
+              <div className="pulse-ring">▶</div>
+              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[#F2D47A]">Your Godavari story begins here</p>
+              <p className="mt-2 text-sm text-[#BBAE8B]">Add your celebration video to <span className="text-[#FFD34E]">public/videos/hero.mp4</span> when ready.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="eyebrow">THE IDEA</div>
+          <h2 className="section-title">Not just a venue.<br /><span>A place made for your moment.</span></h2>
+          <p className="section-copy">
+            Sandadi brings together Godavari destinations, event experiences, trusted services and flexible budgets into one beautiful journey — so planning feels as special as the celebration itself.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="events" className="section-shell pt-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div><div className="eyebrow">01 / CELEBRATE</div><h2 className="section-heading">What are you celebrating?</h2></div>
+            <button onClick={startPlanning} className="text-sm text-[#FFD34E] underline underline-offset-8">Build my event →</button>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {events.map((item) => (
+              <button key={item.name} onClick={() => { setEvent(item.name); setPlannerOpen(true); }} className={`choice-card ${event === item.name ? "choice-active" : ""}`}>
+                <span className="choice-icon">{item.icon}</span><span className="choice-name">{item.name}</span><span className="choice-sub">{item.sub}</span>
+              </button>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="destinations" className="section-shell">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10"><div className="eyebrow">02 / DESTINATION</div><h2 className="section-heading">Choose your kind of Godavari.</h2><p className="mt-3 max-w-2xl text-[#BBAE8B]">From coconut groves to river islands, the setting becomes part of the celebration.</p></div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {destinations.map((item, index) => (
+              <button key={item.name} onClick={() => { setDestination(item.name); setPlannerOpen(true); }} className={`destination-card destination-${index + 1} ${destination === item.name ? "choice-active" : ""}`}>
+                <div className="destination-shade" /><span className="relative z-10 text-4xl">{item.icon}</span><div className="relative z-10 mt-auto text-left"><span className="choice-name">{item.name}</span><span className="choice-sub">{item.sub}</span></div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="packages" className="section-shell">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 text-center"><div className="eyebrow">03 / PACKAGES</div><h2 className="section-heading">Start with a budget. Build from there.</h2><p className="mx-auto mt-3 max-w-2xl text-[#BBAE8B]">Ready packages give you a clear starting point. Every detail can still be customised.</p></div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {packages.map((item) => (
+              <button key={item.budget} onClick={() => { setBudget(item.budget); setPlannerOpen(true); }} className={`package-card ${budget === item.budget ? "package-active" : ""}`}>
+                <div className="text-xs uppercase tracking-[0.3em] text-[#CFA83A]">From</div><div className="package-price">{item.budget}</div><div className="text-lg font-semibold text-[#FFF1B0]">{item.title}</div><div className="mt-2 text-xs text-[#BBAE8B]">{item.people}</div>
+                <div className="my-6 h-px bg-[#D4A72C]/20" />
+                <ul className="space-y-2 text-left text-sm text-[#D8CCAA]">{item.included.map((x) => <li key={x}>✦ {x}</li>)}</ul>
+              </button>
+            ))}
+          </div>
+          <button onClick={startPlanning} className="mx-auto mt-8 block text-sm font-semibold text-[#FFD34E]">I have my own budget → Create Custom</button>
+        </div>
+      </section>
+
+      <section id="services" className="section-shell pt-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10"><div className="eyebrow">04 / SERVICES</div><h2 className="section-heading">Bring the details together.</h2></div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((item) => <button key={item.name} onClick={() => toggleService(item.name)} className={`service-card ${selectedServices.includes(item.name) ? "service-active" : ""}`}><span className="text-3xl">{item.icon}</span><span className="choice-name mt-4">{item.name}</span><span className="choice-sub">{item.sub}</span><span className="service-check">{selectedServices.includes(item.name) ? "✓ Selected" : "Add +"}</span></button>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-[32px] border border-[#D4A72C]/30 bg-gradient-to-br from-[#4B0B15] via-[#27070D] to-[#160406] p-8 text-center shadow-[0_30px_100px_rgba(0,0,0,.4)] md:p-16">
+          <div className="ornament">✦</div>
+          <div className="eyebrow mt-5">YOUR CELEBRATION, YOUR WAY</div>
+          <h2 className="section-title mt-3">Tell us the moment.<br /><span>We'll help create the Sandadi.</span></h2>
+          <p className="mx-auto mt-5 max-w-2xl text-[#C9BD9B]">Choose an event, destination, budget and services. Sandadi turns your ideas into a clear event plan.</p>
+          <button onClick={startPlanning} className="gold-button large mt-9">Create My Event Plan</button>
+        </div>
+      </section>
+
+      <footer className="border-t border-[#D4A72C]/15 px-5 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div><div className="telugu-logo text-4xl">సందడి</div><p className="mt-1 text-xs tracking-[0.25em] text-[#BBAE8B]">DESTINATION IN GODAVARI</p></div>
+          <p className="text-sm text-[#857A63]">© 2026 Sandadi. Every celebration deserves a destination.</p>
+        </div>
+      </footer>
+
+      {plannerOpen && (
+        <div className="modal-backdrop" onClick={() => setPlannerOpen(false)}>
+          <div className="planner-panel" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-start justify-between gap-5">
+              <div><div className="eyebrow">CREATE YOUR SANDADI</div><h2 className="mt-2 text-3xl font-semibold text-[#FFF3B8]">Build your event</h2><p className="mt-2 text-sm text-[#AFA283]">Choose what you know now. You can customise the rest later.</p></div>
+              <button onClick={() => setPlannerOpen(false)} className="close-button">×</button>
+            </div>
+            {submitted ? (
+              <div className="mt-10 rounded-2xl border border-[#D4A72C]/30 bg-[#3A0911] p-8 text-center">
+                <div className="text-5xl">✦</div><h3 className="mt-4 text-2xl text-[#FFD34E]">Your Sandadi plan is ready.</h3><p className="mt-3 text-[#C9BD9B]">We have captured your selections. The next step is connecting this form to your enquiry/WhatsApp/email workflow.</p><button onClick={() => setPlannerOpen(false)} className="gold-button mt-6">Done</button>
+              </div>
+            ) : (
+              <>
+                <div className="planner-grid mt-8">
+                  <label>Event<select value={event} onChange={(e) => setEvent(e.target.value)}><option value="">Choose event</option>{events.map(x => <option key={x.name}>{x.name}</option>)}</select></label>
+                  <label>Destination<select value={destination} onChange={(e) => setDestination(e.target.value)}><option value="">Choose destination</option>{destinations.map(x => <option key={x.name}>{x.name}</option>)}</select></label>
+                  <label>Budget<select value={budget} onChange={(e) => setBudget(e.target.value)}><option value="">Choose budget</option><option>₹50K</option><option>₹1L</option><option>₹2L</option><option>₹5L</option><option>Custom</option></select></label>
+                  <label>Date<input type="date" /></label>
+                  <label>Guests<input type="number" min="1" placeholder="Approx. guests" /></label>
+                  <label>Location<input placeholder="Town / preferred area" /></label>
+                </div>
+                {selectedPackage && <div className="mt-6 rounded-xl border border-[#D4A72C]/20 bg-black/20 p-4"><div className="text-sm font-semibold text-[#FFD34E]">{selectedPackage.title} · {selectedPackage.people}</div><div className="mt-2 flex flex-wrap gap-2">{selectedPackage.included.map(x => <span key={x} className="tag">{x}</span>)}</div></div>}
+                <div className="mt-7"><div className="text-sm font-semibold text-[#EBD99B]">Services</div><div className="mt-3 flex flex-wrap gap-2">{services.map(x => <button key={x.name} onClick={() => toggleService(x.name)} className={`service-pill ${selectedServices.includes(x.name) ? "pill-active" : ""}`}>{x.icon} {x.name}</button>)}</div></div>
+                <button onClick={completePlan} className="gold-button large mt-8 w-full">Review My Sandadi Plan →</button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+    </main>
   );
 }
