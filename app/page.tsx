@@ -30,9 +30,9 @@ const destinations: Item[] = [
 const destinationPhotos: Record<string, string> = {
   "River Bay": "https://www.sterlingholidays.com/content/dam/sterlingholidays/destinations/galleryslider/dindi/dindi-antarvedi-godavari-meets-bay-of-bengal.jpg.imgw.1280.1280.jpeg",
   "Kobbari Thota": "https://www.onefivenine.com/images/Travel/530.jpg",
-  "Paddy Fields": "https://www.onefivenine.com/images/Travel/530.jpg",
+  "Paddy Fields": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Rice_field_2.jpg",
   "River Island": "https://pbs.twimg.com/media/EkXUtuqU0AEd2nh.jpg",
-  "Beach": "https://www.sterlingholidays.com/content/dam/sterlingholidays/destinations/galleryslider/dindi/dindi-antarvedi-godavari-meets-bay-of-bengal.jpg.imgw.1280.1280.jpeg",
+  "Beach": "https://commons.wikimedia.org/wiki/Special:FilePath/Antarvedi_Beach_view_01.jpg",
   "Backwaters": "https://img.etimg.com/photo/msid-123493499%2Cimgsize-48146/Dindi.jpg",
   "Resort": "https://2.bp.blogspot.com/-0QaS0eL0Cb8/TpFN33ih0kI/AAAAAAAAAG4/LQYW6-bnDxI/s1600/Anand%2BResorts%2B1.jpg",
   "Temple": "https://vizagtourism.org.in/images/v2/gateways/sri-sita-ramachandra-swamy-temple-header.jpg",
@@ -79,7 +79,7 @@ export default function Home() {
   const [introVisible, setIntroVisible] = useState(true);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setIntroVisible(false), 2200);
+    const timer = window.setTimeout(() => setIntroVisible(false), 4200);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -123,9 +123,10 @@ export default function Home() {
         <div className="site-intro" aria-label="Opening Sandadi">
           <div className="site-intro-glow" />
           <div className="site-intro-mark">✦</div>
-          <div className="telugu-logo site-intro-title">సందడి</div>
+          <div className="telugu-logo site-intro-title" aria-label="సందడి">సందడి</div>
           <div className="site-intro-sub">DESTINATION IN GODAVARI</div>
           <div className="site-intro-line"><span /></div>
+          <div className="site-intro-wordmark">GODAVARI • DESTINATIONS • CELEBRATIONS</div>
         </div>
       )}
       <div className="gold-dust" aria-hidden="true" />
@@ -150,7 +151,7 @@ export default function Home() {
         <div className="hero-orb hero-orb-two" />
         <div className="absolute inset-5 rounded-[28px] border border-[#D4A72C]/20 md:inset-8" />
         <div className="absolute inset-8 rounded-[22px] border border-[#FFF0A0]/10 md:inset-12" />
-        <div className="relative z-10 mx-auto max-w-5xl text-center">
+        <div className="relative z-10 mx-auto max-w-5xl text-center hero-content-reveal">
           <div className="mb-7 hero-reveal text-xs font-medium uppercase tracking-[0.45em] text-[#F2D47A]">A destination for every celebration</div>
           <div className="ornament mx-auto mb-4">✦</div>
           <div className="overflow-visible px-4 py-4">
@@ -215,7 +216,7 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {destinations.map((item, index) => (
               <button key={item.name} onClick={() => { setDestination(item.name); setPlannerOpen(true); }} className={`destination-card destination-${index + 1} ${destination === item.name ? "choice-active" : ""}`} style={{ backgroundImage: `linear-gradient(to top, rgba(8,2,3,.94), rgba(8,2,3,.12) 65%), url(${destinationPhotos[item.name]})` }}>
-                <div className="destination-shade" /><span className="relative z-10 text-4xl">{item.icon}</span><div className="relative z-10 mt-auto text-left"><span className="choice-name">{item.name}</span><span className="choice-sub">{item.sub}</span></div>
+                <div className="destination-shade" /><div className="relative z-10 mt-auto text-left"><span className="choice-name">{item.name}</span><span className="choice-sub">{item.sub}</span></div>
               </button>
             ))}
           </div>
