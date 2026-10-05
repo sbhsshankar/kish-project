@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@500;600;700;800&display=swap");
 
 :root { --wine:#170406; --wine2:#3A0911; --gold:#FFD34E; --gold2:#B87905; --cream:#FFF7D0; }
 * { box-sizing:border-box; }
@@ -11,8 +12,8 @@ button { cursor:pointer; }
 .hero-orb { position:absolute; border-radius:999px; filter:blur(60px); opacity:.22; animation:float 8s ease-in-out infinite; }
 .hero-orb-one { width:260px;height:260px;background:#FFD34E;top:25%;left:10%; }
 .hero-orb-two { width:220px;height:220px;background:#8D1729;right:10%;bottom:18%;animation-delay:-3s; }
-.telugu-logo,.telugu-hero { font-family:"Noto Serif Telugu","Nirmala UI","Gautami",serif; font-weight:800; background:linear-gradient(180deg,#FFF7C7 5%,#FFD34E 45%,#C88908 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 4px 22px rgba(255,190,40,.22); }
-.telugu-hero { font-size:clamp(5rem,15vw,10rem); }
+.telugu-logo,.telugu-hero { font-family:"Noto Sans Telugu","Nirmala UI","Gautami",sans-serif; font-weight:700; background:linear-gradient(180deg,#FFF7C7 5%,#FFD34E 45%,#C88908 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 4px 22px rgba(255,190,40,.22); }
+.telugu-hero { font-size:clamp(5rem,15vw,10rem); letter-spacing:.01em; }
 .ornament { color:#FFD34E; text-shadow:0 0 24px rgba(255,190,40,.6); font-size:24px; }
 .gold-button { border:1px solid #FFE39A; border-radius:999px; padding:11px 20px; color:#2A0A08; font-weight:800; background:linear-gradient(180deg,#FFF7C7,#FFD34E 50%,#C88908); box-shadow:0 0 25px rgba(255,194,56,.16), inset 0 1px rgba(255,255,255,.7); transition:.3s; }
 .gold-button:hover { transform:translateY(-2px); box-shadow:0 8px 35px rgba(255,194,56,.3); filter:brightness(1.08); }
@@ -74,14 +75,14 @@ button { cursor:pointer; }
 .kobbari-hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}.kobbari-main-photo{min-height:470px;position:relative;overflow:hidden;border:1px solid #D4A72C35;border-radius:28px;background:#100706}.kobbari-main-photo img{width:100%;height:100%;min-height:470px;object-fit:cover;display:block;transition:transform .8s ease,filter .8s ease}.kobbari-main-photo:hover img{transform:scale(1.05);filter:saturate(1.12)}.photo-overlay{position:absolute;inset:auto 0 0;padding:30px;display:flex;flex-direction:column;gap:7px;background:linear-gradient(transparent,rgba(10,2,3,.92))}.photo-overlay strong{font-size:clamp(2rem,4vw,3.4rem);color:#FFF0B0}.photo-overlay span:last-child{color:#D4C59F}.photo-kicker{font-size:10px;letter-spacing:.3em;color:#FFD34E;font-weight:700}.kobbari-story{display:flex;flex-direction:column;justify-content:center;border:1px solid #D4A72C25;border-radius:28px;padding:34px;background:linear-gradient(145deg,#2A080E,#160507)}.story-number{color:#FFD34E;font-size:12px;letter-spacing:.3em}.kobbari-story h3{margin-top:12px;color:#FFF1B0;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.1}.kobbari-story p{margin-top:16px;color:#BBAE8B;line-height:1.8}.story-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.story-tags span{border:1px solid #D4A72C2B;border-radius:999px;padding:8px 11px;color:#D9C99D;font-size:11px;background:#1B0508}.whatsapp-button{border:1px solid #C9E8B0;border-radius:999px;padding:12px 18px;color:#17300D;font-weight:800;background:linear-gradient(180deg,#E8F7D9,#BFE89F);box-shadow:0 8px 25px rgba(120,190,80,.12);transition:.3s;white-space:nowrap}.whatsapp-button:hover{transform:translateY(-2px);filter:brightness(1.05);box-shadow:0 12px 35px rgba(120,190,80,.2)}.photo-gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.gallery-photo{min-height:230px;position:relative;overflow:hidden;border:1px solid #D4A72C25;border-radius:20px;background:#100706;text-align:left}.gallery-photo img{width:100%;height:100%;min-height:230px;object-fit:cover;display:block;transition:transform .65s ease}.gallery-photo:hover img{transform:scale(1.08)}.gallery-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,2,2,.9),transparent 55%);pointer-events:none}.gallery-caption{position:absolute;z-index:2;left:15px;right:15px;bottom:14px;display:flex;flex-direction:column;gap:4px}.gallery-caption strong{color:#FFF0B0;font-size:13px}.gallery-caption small{color:#C7B994;font-size:10px;line-height:1.35}@media(max-width:900px){.kobbari-hero-grid{grid-template-columns:1fr}.photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.kobbari-main-photo,.kobbari-main-photo img{min-height:380px}}@media(max-width:640px){.photo-gallery{grid-template-columns:1fr}.gallery-photo,.gallery-photo img{min-height:250px}.kobbari-story{padding:25px}.whatsapp-button{white-space:normal}}
 
 
-.site-intro{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,#4b0b15 0%,#21070c 34%,#080203 78%);animation:introExit .8s 1.55s ease-in forwards;pointer-events:auto}
-.site-intro-glow{position:absolute;width:35vw;height:35vw;min-width:260px;min-height:260px;border-radius:50%;background:#ffd34e;filter:blur(100px);opacity:.12;animation:introGlow 1.8s ease-in-out infinite alternate}
-.site-intro-mark{position:relative;color:#ffd34e;font-size:26px;opacity:0;animation:introMark .8s .15s ease-out forwards,markFloat 2s 1s ease-in-out infinite}
-.site-intro-title{position:relative;margin-top:12px;font-size:clamp(4rem,12vw,7rem);line-height:1.2;opacity:0;transform:translateY(22px) scale(.96);animation:introTitle 1s .35s cubic-bezier(.16,1,.3,1) forwards}
-.site-intro-sub{position:relative;margin-top:4px;font-size:10px;letter-spacing:.38em;color:#e4c36a;opacity:0;animation:introSub .8s .75s ease-out forwards}
-.site-intro-line{position:relative;width:150px;height:1px;margin-top:22px;background:#ffd34e22;overflow:hidden;opacity:0;animation:introSub .6s .9s ease-out forwards}
-.site-intro-line span{display:block;width:55%;height:100%;background:#ffd34e;animation:introLine 1.3s .95s ease-in-out infinite}
-.hero-reveal{animation:heroReveal 1.1s .15s cubic-bezier(.16,1,.3,1) both}
+.site-intro{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,#5a0d19 0%,#26070d 30%,#080203 78%);animation:introExit .95s 3.35s cubic-bezier(.76,0,.24,1) forwards;pointer-events:auto;overflow:hidden}
+.site-intro-glow{position:absolute;width:35vw;height:35vw;min-width:260px;min-height:260px;border-radius:50%;background:#ffd34e;filter:blur(100px);opacity:.12;animation:introGlow 2.8s ease-in-out infinite alternate}.site-intro:before{content:"";position:absolute;width:min(72vw,760px);height:min(72vw,760px);border:1px solid #ffd34e18;border-radius:50%;box-shadow:0 0 0 80px #ffd34e06,0 0 0 160px #ffd34e03;animation:introRings 5s ease-in-out infinite}.site-intro:after{content:"✦   ·   ✦   ·   ✦   ·   ✦";position:absolute;top:17%;left:0;right:0;text-align:center;color:#ffd34e44;font-size:12px;letter-spacing:1.4em;animation:introStars 4s ease-in-out infinite}
+.site-intro-mark{position:relative;z-index:2;color:#ffd34e;font-size:30px;opacity:0;animation:introMark .9s .2s cubic-bezier(.16,1,.3,1) forwards,markFloat 2.4s 1.1s ease-in-out infinite}
+.site-intro-title{position:relative;z-index:2;margin-top:12px;padding:0 .15em;font-size:clamp(4.4rem,13vw,7.5rem);line-height:1.28;opacity:0;transform:translateY(30px) scale(.94);animation:introTitle 1.35s .45s cubic-bezier(.16,1,.3,1) forwards}
+.site-intro-sub{position:relative;z-index:2;margin-top:8px;font-size:10px;letter-spacing:.42em;color:#e4c36a;opacity:0;animation:introSub 1s 1.15s ease-out forwards}
+.site-intro-line{position:relative;z-index:2;width:180px;height:1px;margin-top:25px;background:#ffd34e22;overflow:hidden;opacity:0;animation:introSub .8s 1.35s ease-out forwards}
+.site-intro-line span{display:block;width:55%;height:100%;background:#ffd34e;box-shadow:0 0 18px #ffd34e;animation:introLine 1.8s 1.45s ease-in-out infinite}.site-intro-wordmark{position:relative;z-index:2;margin-top:18px;font-size:8px;letter-spacing:.5em;color:#a99668;opacity:0;animation:introSub .9s 1.7s ease-out forwards}
+.hero-content-reveal{animation:heroContentIn 1.5s .25s cubic-bezier(.16,1,.3,1) both}.hero-reveal{animation:heroReveal 1.2s .55s cubic-bezier(.16,1,.3,1) both}
 .cinematic-video{animation:heroVideoIn 1.4s .45s cubic-bezier(.16,1,.3,1) both}
 .destination-card{background-size:cover!important;background-position:center!important}
 .destination-card:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,211,78,.04),transparent 40%);opacity:0;transition:.5s}
@@ -90,10 +91,10 @@ button { cursor:pointer; }
 @keyframes introTitle{to{opacity:1;transform:none}}
 @keyframes introSub{to{opacity:1}}
 @keyframes introLine{0%{transform:translateX(-120%)}100%{transform:translateX(250%)}}
-@keyframes introGlow{from{transform:scale(.8);opacity:.08}to{transform:scale(1.15);opacity:.18}}
+@keyframes introGlow{from{transform:scale(.8);opacity:.08}to{transform:scale(1.18);opacity:.2}}@keyframes introRings{0%,100%{transform:scale(.82);opacity:.35}50%{transform:scale(1.05);opacity:.75}}@keyframes introStars{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:.7;transform:translateY(-8px)}}
 @keyframes markFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @keyframes introExit{to{opacity:0;visibility:hidden;transform:scale(1.02)}}
-@keyframes heroReveal{from{opacity:0;transform:translateY(28px);letter-spacing:.65em}to{opacity:1;transform:none;letter-spacing:.45em}}
+@keyframes heroContentIn{from{opacity:0;transform:translateY(32px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}@keyframes heroReveal{from{opacity:0;transform:translateY(28px);letter-spacing:.65em}to{opacity:1;transform:none;letter-spacing:.45em}}
 @keyframes heroVideoIn{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
-@media(max-width:640px){.site-intro-title{font-size:5rem}.site-intro-sub{font-size:8px}.site-intro-line{width:120px}}
-@media(prefers-reduced-motion:reduce){.site-intro{animation:none!important}.site-intro-title,.site-intro-mark,.site-intro-sub,.site-intro-line{animation:none!important;opacity:1}.hero-reveal,.cinematic-video{animation:none!important}}
+@media(max-width:640px){.site-intro-title{font-size:5rem;line-height:1.3}.site-intro-sub{font-size:8px}.site-intro-line{width:120px}.site-intro-wordmark{font-size:6px;letter-spacing:.35em}.telugu-hero{font-size:5.3rem;line-height:1.4}}
+@media(prefers-reduced-motion:reduce){.site-intro{animation:none!important}.site-intro-title,.site-intro-mark,.site-intro-sub,.site-intro-line,.site-intro-wordmark{animation:none!important;opacity:1}.hero-reveal,.cinematic-video{animation:none!important}}
