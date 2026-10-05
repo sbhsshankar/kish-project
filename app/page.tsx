@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Item = { name: string; sub: string; icon: string };
 type Plan = { budget: string; title: string; people: string; included: string[] };
@@ -26,6 +26,17 @@ const destinations: Item[] = [
   { name: "Resort", sub: "Comfort, celebration and stay", icon: "🏨" },
   { name: "Temple", sub: "A sacred setting for meaningful moments", icon: "🪔" },
 ];
+
+const destinationPhotos: Record<string, string> = {
+  "River Bay": "https://www.sterlingholidays.com/content/dam/sterlingholidays/destinations/galleryslider/dindi/dindi-antarvedi-godavari-meets-bay-of-bengal.jpg.imgw.1280.1280.jpeg",
+  "Kobbari Thota": "https://www.onefivenine.com/images/Travel/530.jpg",
+  "Paddy Fields": "https://www.onefivenine.com/images/Travel/530.jpg",
+  "River Island": "https://pbs.twimg.com/media/EkXUtuqU0AEd2nh.jpg",
+  "Beach": "https://www.sterlingholidays.com/content/dam/sterlingholidays/destinations/galleryslider/dindi/dindi-antarvedi-godavari-meets-bay-of-bengal.jpg.imgw.1280.1280.jpeg",
+  "Backwaters": "https://img.etimg.com/photo/msid-123493499%2Cimgsize-48146/Dindi.jpg",
+  "Resort": "https://2.bp.blogspot.com/-0QaS0eL0Cb8/TpFN33ih0kI/AAAAAAAAAG4/LQYW6-bnDxI/s1600/Anand%2BResorts%2B1.jpg",
+  "Temple": "https://vizagtourism.org.in/images/v2/gateways/sri-sita-ramachandra-swamy-temple-header.jpg",
+};
 
 const services: Item[] = [
   { name: "Decor", sub: "From traditional to grand", icon: "🌸" },
@@ -65,6 +76,12 @@ export default function Home() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [plannerOpen, setPlannerOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [introVisible, setIntroVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIntroVisible(false), 2200);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const selectedPackage = useMemo(() => packages.find((p) => p.budget === budget), [budget]);
 
@@ -83,8 +100,34 @@ export default function Home() {
     setSubmitted(true);
   };
 
+  const sendPlanToWhatsApp = () => {
+    const message = [
+      "Hello Sandadi! I would like to plan an event.",
+      event ? `Event: ${event}` : "",
+      destination ? `Destination: ${destination}` : "",
+      budget ? `Budget: ${budget}` : "",
+      selectedServices.length ? `Services: ${selectedServices.join(", ")}` : "",
+      "Please share availability, options and quotation."
+    ].filter(Boolean).join("\n");
+    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
+
+  const sendKobbariInfoToWhatsApp = () => {
+    const message = "Hello Sandadi! I am interested in Kobbari Thota for an event. Please share photos, availability, pricing, guest capacity and package options.";
+    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#170406] text-[#FFF7D0]">
+      {introVisible && (
+        <div className="site-intro" aria-label="Opening Sandadi">
+          <div className="site-intro-glow" />
+          <div className="site-intro-mark">✦</div>
+          <div className="telugu-logo site-intro-title">సందడి</div>
+          <div className="site-intro-sub">DESTINATION IN GODAVARI</div>
+          <div className="site-intro-line"><span /></div>
+        </div>
+      )}
       <div className="gold-dust" aria-hidden="true" />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#D4A72C]/20 bg-[#170406]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
@@ -108,7 +151,7 @@ export default function Home() {
         <div className="absolute inset-5 rounded-[28px] border border-[#D4A72C]/20 md:inset-8" />
         <div className="absolute inset-8 rounded-[22px] border border-[#FFF0A0]/10 md:inset-12" />
         <div className="relative z-10 mx-auto max-w-5xl text-center">
-          <div className="mb-7 animate-fade-up text-xs font-medium uppercase tracking-[0.45em] text-[#F2D47A]">A destination for every celebration</div>
+          <div className="mb-7 hero-reveal text-xs font-medium uppercase tracking-[0.45em] text-[#F2D47A]">A destination for every celebration</div>
           <div className="ornament mx-auto mb-4">✦</div>
           <div className="overflow-visible px-4 py-4">
             <h1 className="telugu-hero leading-[1.35]">సందడి</h1>
@@ -171,7 +214,7 @@ export default function Home() {
           <div className="mb-10"><div className="eyebrow">02 / DESTINATION</div><h2 className="section-heading">Choose your kind of Godavari.</h2><p className="mt-3 max-w-2xl text-[#BBAE8B]">From coconut groves to river islands, the setting becomes part of the celebration.</p></div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {destinations.map((item, index) => (
-              <button key={item.name} onClick={() => { setDestination(item.name); setPlannerOpen(true); }} className={`destination-card destination-${index + 1} ${destination === item.name ? "choice-active" : ""}`}>
+              <button key={item.name} onClick={() => { setDestination(item.name); setPlannerOpen(true); }} className={`destination-card destination-${index + 1} ${destination === item.name ? "choice-active" : ""}`} style={{ backgroundImage: `linear-gradient(to top, rgba(8,2,3,.94), rgba(8,2,3,.12) 65%), url(${destinationPhotos[item.name]})` }}>
                 <div className="destination-shade" /><span className="relative z-10 text-4xl">{item.icon}</span><div className="relative z-10 mt-auto text-left"><span className="choice-name">{item.name}</span><span className="choice-sub">{item.sub}</span></div>
               </button>
             ))}
@@ -190,7 +233,7 @@ export default function Home() {
             <div className="kobbari-story"><div className="story-number">01</div><h3>A destination people remember.</h3><p>Perfect for destination weddings, pre-wedding shoots, intimate family functions, birthdays and relaxed gatherings where nature is the backdrop.</p><div className="story-tags"><span>🌴 Coconut Grove</span><span>🌊 Canal / Backwater</span><span>📸 Photo Friendly</span><span>✨ Open-Air Events</span></div><button onClick={() => { setDestination("Kobbari Thota"); setPlannerOpen(true); }} className="gold-button large mt-7">Plan an Event Here →</button></div>
           </div>
           <div className="photo-gallery mt-5">{kobbariPhotos.slice(1).map((photo) => (<button key={photo.src} className="gallery-photo" onClick={() => { setDestination("Kobbari Thota"); setPlannerOpen(true); }}><img src={photo.src} alt={photo.title} /><span className="gallery-caption"><strong>{photo.title}</strong><small>{photo.sub}</small></span></button>))}</div>
-          <div className="mt-6 rounded-2xl border border-[#D4A72C]/20 bg-[#1D0508]/80 p-5 text-sm text-[#BBAE8B]"><span className="text-[#FFD34E]">Why it fits Sandadi:</span> Konaseema is officially described as a lush Godavari-delta destination with coconut groves, fields and waterways, making this visual language a natural fit for the Sandadi destination concept. <span className="ml-1 text-[#756B58]">Photos above are temporary web references; replace them with your own/licensed Kobbari Thota photos before final launch.</span></div>
+          <div className="mt-6 rounded-2xl border border-[#D4A72C]/20 bg-[#1D0508]/80 p-5 text-sm text-[#BBAE8B]"><span className="text-[#FFD34E]">Why it fits Sandadi:</span> Konaseema is officially described as a lush Godavari-delta destination with coconut groves, fields and waterways, making this visual language a natural fit for the Sandadi destination concept. <span className="ml-1 text-[#756B58]">Destination visuals are temporary web references for the prototype. Replace them with your own/licensed photographs before launch.</span></div>
         </div>
       </section>
 
