@@ -38,6 +38,15 @@ const services: Item[] = [
   { name: "Tent House", sub: "Structure, shade and celebration", icon: "⛺" },
 ];
 
+const kobbariPhotos = [
+  { src: "https://pbs.twimg.com/media/Eg0Dt-dVkAY3ANn.jpg", title: "Coconut grove from above", sub: "Endless palms and a canal cutting through the green" },
+  { src: "https://i.pinimg.com/originals/8c/14/8e/8c148e417cb816028a70a5e789c55d6f.jpg", title: "Palm-lined canal", sub: "The classic Konaseema landscape" },
+  { src: "https://thetravelandtourismtimes.com/wp-content/uploads/2025/03/Gmidms2bIAANzAxbgvghn.jpeg", title: "Backwater life", sub: "Coconut groves meeting the Godavari waterways" },
+  { src: "https://img.etimg.com/photo/msid-123493599%2Cimgsize-78016/AnandMahindra%27sfavouriteholidaydestination.jpg", title: "River + coconut canopy", sub: "A destination that feels completely away from the city" },
+  { src: "https://www.clubmahindra.com/blog/images/Top-Things-to-Do-in-Dindi_processed_by_imagy.jpg", title: "Houseboat experience", sub: "Slow cruises through the Godavari backwaters" },
+  { src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/fd/a6/06/rvr-sarovar-portico-dindi.jpg?h=1200&s=1&w=1200", title: "Paddy, water and palms", sub: "Green fields reflected in quiet backwaters" }
+];
+
 const packages: Plan[] = [
   { budget: "₹50K", title: "Beautiful Beginnings", people: "Up to 50 guests", included: ["Venue setup", "Essential decor", "Food arrangement", "Event coordination"] },
   { budget: "₹1L", title: "Grand Gathering", people: "Up to 100 guests", included: ["Venue + decor", "Curated food menu", "Sound setup", "Event management"] },
@@ -170,6 +179,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="kobbari-thota" className="section-shell kobbari-showcase">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div><div className="eyebrow">FEATURED DESTINATION / KOBBARI THOTA</div><h2 className="section-heading">Under the coconut trees, beside the Godavari.</h2><p className="mt-4 max-w-2xl text-[#BBAE8B]">Kobbari Thota is the kind of setting that makes the destination itself part of the celebration — tall coconut palms, canals, open green space, backwaters and the unmistakable Konaseema feeling.</p></div>
+            <button onClick={sendKobbariInfoToWhatsApp} className="whatsapp-button">Send Kobbari Thota info on WhatsApp ↗</button>
+          </div>
+          <div className="kobbari-hero-grid">
+            <div className="kobbari-main-photo"><img src={kobbariPhotos[0].src} alt={kobbariPhotos[0].title} /><div className="photo-overlay"><span className="photo-kicker">THE GODAVARI GREEN</span><strong>Kobbari Thota</strong><span>Nature • Water • Celebration</span></div></div>
+            <div className="kobbari-story"><div className="story-number">01</div><h3>A destination people remember.</h3><p>Perfect for destination weddings, pre-wedding shoots, intimate family functions, birthdays and relaxed gatherings where nature is the backdrop.</p><div className="story-tags"><span>🌴 Coconut Grove</span><span>🌊 Canal / Backwater</span><span>📸 Photo Friendly</span><span>✨ Open-Air Events</span></div><button onClick={() => { setDestination("Kobbari Thota"); setPlannerOpen(true); }} className="gold-button large mt-7">Plan an Event Here →</button></div>
+          </div>
+          <div className="photo-gallery mt-5">{kobbariPhotos.slice(1).map((photo) => (<button key={photo.src} className="gallery-photo" onClick={() => { setDestination("Kobbari Thota"); setPlannerOpen(true); }}><img src={photo.src} alt={photo.title} /><span className="gallery-caption"><strong>{photo.title}</strong><small>{photo.sub}</small></span></button>))}</div>
+          <div className="mt-6 rounded-2xl border border-[#D4A72C]/20 bg-[#1D0508]/80 p-5 text-sm text-[#BBAE8B]"><span className="text-[#FFD34E]">Why it fits Sandadi:</span> Konaseema is officially described as a lush Godavari-delta destination with coconut groves, fields and waterways, making this visual language a natural fit for the Sandadi destination concept. <span className="ml-1 text-[#756B58]">Photos above are temporary web references; replace them with your own/licensed Kobbari Thota photos before final launch.</span></div>
+        </div>
+      </section>
+
       <section id="packages" className="section-shell">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center"><div className="eyebrow">03 / PACKAGES</div><h2 className="section-heading">Start with a budget. Build from there.</h2><p className="mx-auto mt-3 max-w-2xl text-[#BBAE8B]">Ready packages give you a clear starting point. Every detail can still be customised.</p></div>
@@ -221,7 +245,7 @@ export default function Home() {
             </div>
             {submitted ? (
               <div className="mt-10 rounded-2xl border border-[#D4A72C]/30 bg-[#3A0911] p-8 text-center">
-                <div className="text-5xl">✦</div><h3 className="mt-4 text-2xl text-[#FFD34E]">Your Sandadi plan is ready.</h3><p className="mt-3 text-[#C9BD9B]">We have captured your selections. The next step is connecting this form to your enquiry/WhatsApp/email workflow.</p><button onClick={() => setPlannerOpen(false)} className="gold-button mt-6">Done</button>
+                <div className="text-5xl">✦</div><h3 className="mt-4 text-2xl text-[#FFD34E]">Your Sandadi plan is ready.</h3><p className="mt-3 text-[#C9BD9B]">We have captured your selections. The next step is connecting this form to your enquiry/WhatsApp/email workflow.</p><div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center"><button onClick={sendPlanToWhatsApp} className="whatsapp-button">Send Plan on WhatsApp ↗</button><button onClick={() => setPlannerOpen(false)} className="gold-button">Done</button></div>
               </div>
             ) : (
               <>
