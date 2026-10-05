@@ -115,10 +115,17 @@ export default function Home() {
             <button onClick={() => scrollToId("destinations")} className="outline-button large">Explore Destinations <span>↓</span></button>
           </div>
           <div className="mx-auto mt-16 max-w-3xl rounded-3xl border border-[#D4A72C]/25 bg-black/20 p-3 shadow-2xl">
-            <div className="video-placeholder">
-              <div className="pulse-ring">▶</div>
-              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[#F2D47A]">Your Godavari story begins here</p>
-              <p className="mt-2 text-sm text-[#BBAE8B]">Add your celebration video to <span className="text-[#FFD34E]">public/videos/hero.mp4</span> when ready.</p>
+            <div className="cinematic-video" aria-label="Cinematic Godavari destination preview">
+              <div className="cinematic-sky" />
+              <div className="cinematic-sun" />
+              <div className="cinematic-river" />
+              <div className="cinematic-palms" />
+              <div className="cinematic-glow" />
+              <div className="cinematic-caption">
+                <div className="pulse-ring">▶</div>
+                <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[#F2D47A]">A glimpse of Sandadi</p>
+                <p className="mt-2 text-sm text-[#C9BD9B]">Godavari • Celebration • Destination</p>
+              </div>
             </div>
           </div>
         </div>
