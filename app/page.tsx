@@ -58,6 +58,60 @@ const kobbariPhotos = [
   { src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/fd/a6/06/rvr-sarovar-portico-dindi.jpg?h=1200&s=1&w=1200", title: "Paddy, water and palms", sub: "Green fields reflected in quiet backwaters" }
 ];
 
+
+const destinationGalleries: Record<string, { src: string; title: string }[]> = {
+  "River Bay": [
+    { src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85", title: "Open water" },
+    { src: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1000&q=85", title: "River landscape" },
+    { src: "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1000&q=85", title: "Water reflections" },
+    { src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=85", title: "Nature escape" },
+    { src: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85", title: "Golden hour" },
+  ],
+  "Kobbari Thota": kobbariPhotos.map((p) => ({ src: p.src, title: p.title })),
+  "Paddy Fields": [
+    { src: "https://images.unsplash.com/photo-1536054868623-5e3e5b5a0f18?auto=format&fit=crop&w=1000&q=85", title: "Green fields" },
+    { src: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=85", title: "Fields under open skies" },
+    { src: "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1000&q=85", title: "Rural landscape" },
+    { src: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85", title: "Sunrise over land" },
+    { src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Rice_field_2.jpg", title: "Rice fields" },
+  ],
+  "River Island": [
+    { src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85", title: "Island escape" },
+    { src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85", title: "Wide horizons" },
+    { src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=85", title: "Green retreat" },
+    { src: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1000&q=85", title: "Waterway" },
+    { src: "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1000&q=85", title: "River reflections" },
+  ],
+  "Beach": [
+    { src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85", title: "Sandy shoreline" },
+    { src: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1000&q=85", title: "Coastal escape" },
+    { src: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1000&q=85", title: "Water and sky" },
+    { src: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1000&q=85", title: "Tropical greens" },
+    { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Antarvedi_Beach_view_01.jpg", title: "Antarvedi coast" },
+  ],
+  "Backwaters": [
+    { src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85", title: "Quiet water" },
+    { src: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1000&q=85", title: "Waterway journey" },
+    { src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=85", title: "Lush surroundings" },
+    { src: "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1000&q=85", title: "Reflections" },
+    { src: "https://www.clubmahindra.com/blog/images/Top-Things-to-Do-in-Dindi_processed_by_imagy.jpg", title: "Dindi waterways" },
+  ],
+  "Resort": [
+    { src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=85", title: "Poolside retreat" },
+    { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85", title: "Resort stay" },
+    { src: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=85", title: "Guest suites" },
+    { src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=1000&q=85", title: "Outdoor relaxation" },
+    { src: "https://2.bp.blogspot.com/-0QaS0eL0Cb8/TpFN33ih0kI/AAAAAAAAAG4/LQYW6-bnDxI/s1600/Anand%2BResorts%2B1.jpg", title: "Godavari resort" },
+  ],
+  "Temple": [
+    { src: "https://images.unsplash.com/photo-1606293926075-69a00dbpl?auto=format&fit=crop&w=1000&q=85", title: "Sacred architecture" },
+    { src: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1000&q=85", title: "Temple details" },
+    { src: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=85", title: "Heritage setting" },
+    { src: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=85", title: "Traditional sanctuary" },
+    { src: "https://vizagtourism.org.in/images/v2/gateways/sri-sita-ramachandra-swamy-temple-header.jpg", title: "Temple destination" },
+  ],
+};
+
 const packages: Plan[] = [
   { budget: "₹50K", title: "Beautiful Beginnings", people: "Up to 50 guests", included: ["Venue setup", "Essential decor", "Food arrangement", "Event coordination"] },
   { budget: "₹1L", title: "Grand Gathering", people: "Up to 100 guests", included: ["Venue + decor", "Curated food menu", "Sound setup", "Event management"] },
@@ -139,6 +193,7 @@ export default function Home() {
           <nav className="hidden items-center gap-7 text-xs uppercase tracking-[0.18em] text-[#E8D8AD] md:flex">
             <button onClick={() => scrollToId("events")} className="nav-link">Events</button>
             <button onClick={() => scrollToId("destinations")} className="nav-link">Destinations</button>
+            <button onClick={() => scrollToId("previous-work")} className="nav-link">Our Work</button>
             <button onClick={() => scrollToId("packages")} className="nav-link">Packages</button>
             <button onClick={() => scrollToId("services")} className="nav-link">Services</button>
           </nav>
@@ -212,12 +267,15 @@ export default function Home() {
 
       <section id="destinations" className="section-shell">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10"><div className="eyebrow">02 / DESTINATION</div><h2 className="section-heading">Choose your kind of Godavari.</h2><p className="mt-3 max-w-2xl text-[#BBAE8B]">From coconut groves to river islands, the setting becomes part of the celebration.</p></div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mb-10"><div className="eyebrow">02 / DESTINATION</div><h2 className="section-heading">Choose your kind of Godavari.</h2><p className="mt-3 max-w-2xl text-[#BBAE8B]">From coconut groves to river islands, the setting becomes part of the celebration. Open a destination to explore its photo gallery.</p></div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {destinations.map((item, index) => (
-              <button key={item.name} onClick={() => { setDestination(item.name); setPlannerOpen(true); }} className={`destination-card destination-${index + 1} ${destination === item.name ? "choice-active" : ""}`} style={{ backgroundImage: `linear-gradient(to top, rgba(8,2,3,.94), rgba(8,2,3,.12) 65%), url(${destinationPhotos[item.name]})` }}>
-                <div className="destination-shade" /><div className="relative z-10 mt-auto text-left"><span className="choice-name">{item.name}</span><span className="choice-sub">{item.sub}</span></div>
-              </button>
+              <div key={item.name} className={`destination-feature ${destination === item.name ? "choice-active" : ""}`}>
+                <button onClick={() => setDestination(destination === item.name ? "" : item.name)} className={`destination-card destination-${index + 1}`} style={{ backgroundImage: `linear-gradient(to top, rgba(8,2,3,.9), rgba(8,2,3,.08) 65%), url(${destinationPhotos[item.name]})` }} aria-expanded={destination === item.name}>
+                  <div className="relative z-10 mt-auto text-left"><span className="choice-name">{item.name}</span><span className="choice-sub">{item.sub}</span><span className="destination-open">{destination === item.name ? "Close gallery −" : "View 5 photos +"}</span></div>
+                </button>
+                {destination === item.name && <div className="destination-mini-gallery">{(destinationGalleries[item.name] || []).slice(0,5).map((photo) => <button key={photo.src} onClick={() => { setDestination(item.name); setPlannerOpen(true); }} className="destination-mini-photo"><img src={photo.src} alt={photo.title} loading="lazy" /><span>{photo.title}</span></button>)}<button className="gold-button mt-2 w-full" onClick={() => { setDestination(item.name); setPlannerOpen(true); }}>Plan here →</button></div>}
+              </div>
             ))}
           </div>
         </div>
@@ -235,6 +293,16 @@ export default function Home() {
           </div>
           <div className="photo-gallery mt-5">{kobbariPhotos.slice(1).map((photo) => (<button key={photo.src} className="gallery-photo" onClick={() => { setDestination("Kobbari Thota"); setPlannerOpen(true); }}><img src={photo.src} alt={photo.title} /><span className="gallery-caption"><strong>{photo.title}</strong><small>{photo.sub}</small></span></button>))}</div>
           <div className="mt-6 rounded-2xl border border-[#D4A72C]/20 bg-[#1D0508]/80 p-5 text-sm text-[#BBAE8B]"><span className="text-[#FFD34E]">Why it fits Sandadi:</span> Konaseema is officially described as a lush Godavari-delta destination with coconut groves, fields and waterways, making this visual language a natural fit for the Sandadi destination concept. <span className="ml-1 text-[#756B58]">Destination visuals are temporary web references for the prototype. Replace them with your own/licensed photographs before launch.</span></div>
+        </div>
+      </section>
+
+      <section id="previous-work" className="section-shell previous-work-section">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><div className="eyebrow">REAL MOMENTS / REAL STORIES</div><h2 className="section-heading">Our Previous Work.</h2><p className="mt-3 max-w-2xl text-[#BBAE8B]">Short films from weddings, family celebrations and destination events — each story designed to be watched in 20–60 seconds.</p></div><span className="portfolio-note">CLIENT VIDEO PORTFOLIO</span></div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {[{ title: "Wedding Stories", sub: "Dolu, sannayi, rituals and the big moment", icon: "💍" }, { title: "Destination Celebrations", sub: "Godavari landscapes, decor and guest moments", icon: "🌿" }, { title: "Family Sandadi", sub: "Engagements, birthdays and meaningful gatherings", icon: "✨" }].map((film) => <article key={film.title} className="film-card"><div className="film-placeholder"><span className="film-icon">{film.icon}</span><span className="film-play">▶</span><span className="film-duration">20–60 SEC</span></div><h3>{film.title}</h3><p>{film.sub}</p><span className="film-status">Your client clip will be added here</span></article>)}
+          </div>
+          <p className="mt-5 text-sm text-[#887B5F]">Portfolio layout is ready. Upload your real client clips or share their video links to activate playback here; these cards are clearly marked as placeholders, not claimed client footage.</p>
         </div>
       </section>
 
