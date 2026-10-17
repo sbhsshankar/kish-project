@@ -201,10 +201,6 @@ export default function Home() {
             <div className="intro-palm intro-palm-right"><i /><b /><em /></div>
             <div className="intro-coconut-row" />
             <div className="intro-event-lawn" />
-            <div className="intro-event-canopy"><span /><span /><span /></div>
-            <div className="intro-festoon-lights"><i /><i /><i /><i /><i /><i /><i /><i /></div>
-            <div className="intro-stage"><span className="intro-stage-glow" /><span className="intro-stage-floral" /></div>
-            <div className="intro-guest guest-one" /><div className="intro-guest guest-two" /><div className="intro-guest guest-three" /><div className="intro-guest guest-four" /><div className="intro-guest guest-five" />
             <div className="intro-floating-petals"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <div className="intro-scene-haze" />
           </div>
@@ -265,44 +261,6 @@ export default function Home() {
             <button onClick={startPlanning} className="gold-button large">Plan Your Event</button>
             <button onClick={() => scrollToId("destinations")} className="outline-button large">Explore Destinations <span>↓</span></button>
           </div>
-          <div className="mx-auto mt-16 max-w-3xl rounded-3xl border border-[#D4A72C]/25 bg-black/20 p-3 shadow-2xl">
-            <div className="cinematic-video" aria-label="Cinematic Godavari destination preview">
-              <div className="cinematic-sky" />
-              <div className="cinematic-river" />
-              <div className="cinematic-palms" />
-              <div className="cinematic-glow" />
-              <div className="cinematic-festival" aria-hidden="true">
-                <span className="cinematic-dancer dancer-drummer" aria-label="Traditional drummer dancing"><i className="dancer-head" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /><i className="dancer-drum" /></span>
-                <span className="cinematic-dancer dancer-woman" aria-label="Woman dancing in a festive sari"><i className="dancer-head" /><i className="dancer-hair" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /></span>
-                <span className="cinematic-dancer dancer-man" aria-label="Man dancing at the celebration"><i className="dancer-head" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /></span>
-                <span className="cinematic-dancer dancer-child" aria-label="Child dancing"><i className="dancer-head" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /></span>
-                <span className="cinematic-dancer dancer-woman dancer-woman-two" aria-label="Another woman dancing"><i className="dancer-head" /><i className="dancer-hair" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /></span>
-                <span className="cinematic-marigold-string" />
-              </div>
-              <div className="cinematic-caption">
-                <div className="pulse-ring">▶</div>
-                <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[#F2D47A]">A glimpse of Sandadi</p>
-                <p className="mt-2 text-sm text-[#C9BD9B]">Godavari • Celebration • Destination</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="pandhiri-setup-strip" aria-label="Traditional green pandhiri event setup animation">
-        <div className="pandhiri-scene" aria-hidden="true">
-          <div className="pandhiri-sky" />
-          <div className="pandhiri-back-garden" />
-          <div className="pandhiri-canopy"><span /><span /><span /><span /><span /></div>
-          <div className="pandhiri-frame frame-left" /><div className="pandhiri-frame frame-right" />
-          <div className="pandhiri-flower-line"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
-          <div className="pandhiri-stage" />
-          <div className="pandhiri-chair chair-one" /><div className="pandhiri-chair chair-two" /><div className="pandhiri-chair chair-three" />
-          <div className="setup-person setup-person-one"><i className="setup-head" /><i className="setup-body" /><i className="setup-arm" /><i className="setup-leg" /></div>
-          <div className="setup-person setup-person-two"><i className="setup-head" /><i className="setup-body" /><i className="setup-arm" /><i className="setup-leg" /></div>
-          <div className="setup-person setup-person-three"><i className="setup-head" /><i className="setup-body" /><i className="setup-arm" /><i className="setup-leg" /></div>
-          <div className="pandhiri-floor" />
-          <div className="setup-label">A GREEN PANDHIRI, MADE FOR YOUR SANDADI</div>
         </div>
       </section>
 
