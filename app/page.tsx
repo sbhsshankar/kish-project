@@ -130,7 +130,7 @@ export default function Home() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [plannerOpen, setPlannerOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [introVisible, setIntroVisible] = useState(true);
+  const [introVisible, setIntroVisible] = useState(false);
   const [showScrollCue, setShowScrollCue] = useState(true);
   const [galleryOpen, setGalleryOpen] = useState<string | null>(null);
   const [activePhoto, setActivePhoto] = useState<{ src: string; title: string; destination: string } | null>(null);
