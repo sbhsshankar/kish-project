@@ -238,3 +238,86 @@ header .telugu-logo,header nav button{color:#285733!important}
 .photo-overlay,.photo-overlay *,.film-placeholder *,.destination-card *{text-shadow:0 2px 12px #102a18aa}
 @media(max-width:640px){.banyan-edge{width:11px}.banyan-edge i{width:9px;height:18px}.banyan-edge i:nth-child(even){left:2px;right:auto}.banyan-edge-right i:nth-child(even){left:auto;right:2px}.banyan-top-vines{left:11px;right:11px}.banyan-frame{opacity:.7}}
 @media(prefers-reduced-motion:reduce){.banyan-edge,.banyan-edge i,.banyan-top-vines i{animation:none!important}}
+
+
+/* Final polish: readable Telugu opening, one palette, motion throughout the page */
+:root{
+  --sandadi-primary:#214d30;
+  --sandadi-secondary:#d6a323;
+  --sandadi-accent:#ffe27a;
+  --sandadi-background:#fbfaee;
+  --sandadi-surface:#f0f4e5;
+  --sandadi-text:#29482f;
+  --sandadi-muted:#526b4b;
+}
+html,body{background:var(--sandadi-background);color:var(--sandadi-text);font-family:Arial,"Noto Sans Telugu","Nirmala UI","Gautami",sans-serif}
+body{overflow-x:hidden}
+main.min-h-screen{background:var(--sandadi-background)!important;color:var(--sandadi-text)!important}
+.telugu-logo,.telugu-hero,.site-intro-title{font-family:"Noto Sans Telugu","Nirmala UI","Gautami",sans-serif;font-weight:800;font-synthesis:none}
+.site-intro{isolation:isolate}
+.site-intro .intro-cinematic-scene{z-index:0}
+.site-intro-glow{z-index:1}
+.site-intro-title{
+  display:block;
+  padding:.08em .16em .18em;
+  line-height:1.5!important;
+  min-height:1.5em;
+  overflow:visible;
+  color:#fffbe5!important;
+  -webkit-text-fill-color:#fffbe5!important;
+  background:none!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  text-shadow:0 3px 0 #214d30,0 6px 24px #14351fe0!important;
+  filter:drop-shadow(0 2px 10px #14351f88);
+}
+.site-intro-sub,.site-intro-wordmark{font-weight:800;text-shadow:0 2px 10px #173b28!important}
+.site-intro-sub{color:#fffbe5!important;-webkit-text-fill-color:#fffbe5!important}
+.site-intro-wordmark{color:#fff4c2!important;-webkit-text-fill-color:#fff4c2!important}
+.site-intro-mark{color:var(--sandadi-accent)!important}
+.site-intro-line{background:#fffbe588!important}
+.site-intro-line span{background:var(--sandadi-accent)!important}
+.telugu-logo{background:linear-gradient(180deg,var(--sandadi-primary),#668943 55%,var(--sandadi-secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
+.section-shell{position:relative;isolation:isolate}
+.section-shell:before{content:"";position:absolute;inset:18px 28px;z-index:-1;border:1px solid #78975c16;border-radius:28px;pointer-events:none;transition:border-color .45s,box-shadow .45s}
+.section-shell:hover:before{border-color:#78975c55;box-shadow:inset 0 0 45px #78975c0b}
+.choice-card,.service-card,.package-card,.film-card,.kobbari-story,.destination-card,.gallery-photo{
+  transition:transform .4s cubic-bezier(.2,.75,.25,1),border-color .4s,box-shadow .4s,background-color .4s;
+}
+.choice-card:focus-visible,.service-card:focus-visible,.package-card:focus-visible,.destination-card:focus-visible,button:focus-visible{
+  outline:3px solid var(--sandadi-secondary);outline-offset:3px
+}
+.choice-card:after,.service-card:after,.package-card:after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  border:1px solid transparent;transition:border-color .45s,box-shadow .45s
+}
+.choice-card:hover:after,.service-card:hover:after,.package-card:hover:after{
+  border-color:#d6a32399;box-shadow:inset 0 0 22px #d6a32312
+}
+.section-heading,.section-title{ text-wrap:balance }
+.section-shell .eyebrow{letter-spacing:.22em}
+.section-shell p,.section-shell li{line-height:1.75}
+.gold-button,.outline-button,.whatsapp-button{transition:transform .28s ease,box-shadow .28s ease,filter .28s ease}
+.gold-button:hover,.outline-button:hover,.whatsapp-button:hover{transform:translateY(-2px)}
+/* The banyan frame remains visible as a living edge motif while content stays unobstructed. */
+.banyan-frame{z-index:40;opacity:.9;mix-blend-mode:multiply}
+.banyan-edge{width:clamp(15px,2.2vw,34px);filter:drop-shadow(0 2px 4px #244b2d15)}
+.banyan-edge i,.banyan-top-vines i{box-shadow:0 2px 7px #214d3022,inset 1px 1px #e4edb077}
+.banyan-edge i:nth-child(3n),.banyan-top-vines i:nth-child(3n){animation-duration:6.5s}
+.banyan-edge i:nth-child(3n + 1),.banyan-top-vines i:nth-child(3n + 1){animation-duration:4.2s}
+.banyan-top-vines{height:clamp(18px,3vh,32px)}
+@keyframes sandadiBorderGlow{0%,100%{opacity:.68}50%{opacity:1}}
+.banyan-top-vines:before{animation:sandadiBorderGlow 5s ease-in-out infinite}
+header.fixed{z-index:50}
+.modal-backdrop,.photo-lightbox{z-index:100}
+.site-intro{z-index:200}
+@media(max-width:640px){
+  .site-intro-title{font-size:clamp(4rem,17vw,5.2rem)!important;line-height:1.55!important;padding-bottom:.22em}
+  .site-intro-sub{font-size:8px;letter-spacing:.25em}
+  .banyan-frame{opacity:.72}
+  .section-shell:before{inset:12px 17px;border-radius:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .section-shell:before,.choice-card,.service-card,.package-card,.film-card,.destination-card,.gallery-photo{transition:none!important}
+  .banyan-top-vines:before{animation:none!important}
+}
