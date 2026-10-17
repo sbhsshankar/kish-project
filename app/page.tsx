@@ -176,6 +176,11 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#170406] text-[#FFF7D0]">
+      <div className="banyan-frame" aria-hidden="true">
+        <div className="banyan-edge banyan-edge-left"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
+        <div className="banyan-edge banyan-edge-right"><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/><i/></div>
+        <div className="banyan-top-vines"><i/><i/><i/><i/><i/><i/><i/><i/></div>
+      </div>
       {introVisible && (
         <div className="site-intro" aria-label="Opening Sandadi">
           <div className="site-intro-glow" />
