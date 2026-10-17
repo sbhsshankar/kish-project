@@ -347,3 +347,34 @@ header.fixed{z-index:50}
 @keyframes scrollArrowBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}@keyframes scrollCueEnter{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
 @media(max-width:640px){.banyan-edge{width:23px!important}.banyan-edge:before{left:5px;width:5px}.banyan-edge:after{left:4px;width:17px}.banyan-edge-right:before{left:auto;right:5px}.banyan-edge-right:after{left:auto;right:4px}.banyan-edge i{width:12px!important;height:20px!important}.banyan-edge i:nth-child(even){left:10px!important}.banyan-edge-right i:nth-child(even){left:auto!important;right:10px!important}.site-intro-sub{max-width:calc(100vw - 48px);padding:8px 10px!important;letter-spacing:.16em!important;font-size:8px!important;text-align:center}.site-intro-wordmark{font-size:6px!important;letter-spacing:.12em!important}.scroll-explore-cue{bottom:12px;min-width:158px;padding:8px 14px 7px}}
 @media(prefers-reduced-motion:reduce){.banyan-edge:before,.banyan-edge:after,.banyan-top-vines:before,.banyan-edge i,.banyan-top-vines i,.scroll-explore-arrow,.scroll-explore-cue{animation:none!important}}
+
+
+/* Brand polish: forest-green celebration banner, clear navigation, horizontal desktop galleries */
+.moment-banner{
+  background:radial-gradient(ellipse at 50% 0%,#47744a 0%,#2c5a37 42%,#1e452b 100%)!important;
+  border-color:#d6a32388!important;
+  box-shadow:0 24px 70px #214d3018,inset 0 1px #ffffff20!important;
+}
+.moment-banner .section-title{color:#fff9e8!important}
+.moment-banner .section-title span{color:#ffe27a!important}
+.moment-banner .eyebrow{color:#f5d979!important}
+.moment-banner p{color:#e5eddc!important}
+.moment-banner .ornament{color:#ffe27a!important}
+.banyan-top-vines{display:none!important}
+.banyan-edge{z-index:1!important}
+header.fixed{z-index:260!important}
+.destination-mini-gallery{
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  align-items:stretch;
+  gap:10px!important;
+}
+.destination-mini-photo img{height:clamp(105px,10vw,150px)!important}
+.destination-mini-gallery .gold-button{grid-column:1/-1}
+@media(max-width:900px){
+ .destination-mini-gallery{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:640px){
+ .destination-mini-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+ .destination-mini-photo img{height:105px!important}
+}
+
