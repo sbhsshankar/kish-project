@@ -418,3 +418,76 @@ header.fixed{z-index:260!important}
     height:140px!important;
   }
 }
+
+
+/* Godavari Sandadi: replace the sun motif with a lively local wedding celebration. */
+.intro-sun,.cinematic-sun{display:none!important}
+.intro-sky{
+  background:linear-gradient(180deg,#6aaea0 0%,#b7d7a1 34%,#f4d99a 61%,#8eae68 100%)!important;
+}
+.intro-cultural-life{position:absolute;inset:0;z-index:7;pointer-events:none}
+.life-person,.life-child,.cinematic-band-person,.cinematic-family,.cinematic-kid{
+  position:absolute;display:block;border-radius:48% 48% 15% 15%;
+  box-shadow:inset 2px 0 #fff7c633,0 3px 5px #16351d55;
+  transform-origin:50% 100%;animation:celebrationSway 1.7s ease-in-out infinite alternate;
+}
+.life-person:before,.life-child:before,.cinematic-band-person:before,.cinematic-family:before,.cinematic-kid:before{
+  content:"";position:absolute;width:44%;aspect-ratio:1;left:28%;top:-23%;
+  border-radius:50%;background:linear-gradient(145deg,#d9a16d,#8d5738);
+  box-shadow:0 -3px 0 2px #2d3322;
+}
+.life-person:after,.life-child:after,.cinematic-band-person:after,.cinematic-family:after,.cinematic-kid:after{
+  content:"";position:absolute;left:-25%;top:28%;width:150%;height:12%;
+  border-radius:99px;background:inherit;filter:brightness(1.12);transform:rotate(-22deg);
+}
+.intro-band{position:absolute;left:25%;bottom:7%;width:22%;height:27%}
+.intro-band .band-lead{left:8%;bottom:0;width:clamp(13px,1.5vw,21px);height:72%;background:linear-gradient(90deg,#9e3d2d,#e4a34c 65%,#b65a36)}
+.intro-band .band-drummer{left:56%;bottom:0;width:clamp(14px,1.6vw,23px);height:82%;background:linear-gradient(90deg,#214b3a,#6e9c54 65%,#244d35);animation-delay:-.7s}
+.life-drum{position:absolute;left:48%;bottom:25%;width:clamp(23px,3vw,43px);height:clamp(17px,2vw,29px);border:3px solid #8a4d21;border-radius:50%;background:repeating-linear-gradient(90deg,#c68a3c 0 5px,#f3d08a 6px 9px);transform:rotate(-18deg);box-shadow:0 0 0 2px #f5d99b55;animation:drumBounce .65s ease-in-out infinite alternate}
+.life-nadaswaram{position:absolute;left:16%;bottom:36%;width:clamp(34px,5vw,68px);height:5px;border-radius:99px;background:linear-gradient(90deg,#e9c16c,#8b4a21);transform:rotate(-23deg);box-shadow:0 0 0 1px #fff1b044}
+.intro-men-chat{position:absolute;right:12%;bottom:7%;width:19%;height:25%}
+.intro-men-chat .chat-one{left:8%;bottom:0;width:clamp(13px,1.5vw,22px);height:74%;background:linear-gradient(90deg,#f2e8c5,#fff9df 65%,#b5a67e)}
+.intro-men-chat .chat-two{right:12%;bottom:0;width:clamp(14px,1.6vw,23px);height:83%;background:linear-gradient(90deg,#a84f36,#d58a55 65%,#873a2c);animation-delay:-.8s}
+.intro-men-chat .chat-one:after{transform:rotate(20deg);left:10%}.intro-men-chat .chat-two:after{transform:rotate(-38deg);left:-12%}
+.intro-women-work{position:absolute;left:7%;bottom:5%;width:19%;height:24%}
+.intro-women-work .woman-one{left:8%;bottom:0;width:clamp(16px,1.8vw,26px);height:84%;border-radius:45% 45% 8% 8%;background:linear-gradient(90deg,#8d315c,#e66c8b 55%,#f4b75e)}
+.intro-women-work .woman-two{right:5%;bottom:0;width:clamp(16px,1.8vw,26px);height:74%;background:linear-gradient(90deg,#a77a1c,#e8bf4d 55%,#4e8245);animation-delay:-.5s}
+.life-flower-tray{position:absolute;left:19%;bottom:22%;width:clamp(27px,3.8vw,52px);height:10px;border-radius:50%;background:radial-gradient(circle at 20% 40%,#e75b79 0 3px,transparent 4px),radial-gradient(circle at 40% 30%,#fff0a0 0 3px,transparent 4px),radial-gradient(circle at 62% 45%,#dc4c62 0 3px,transparent 4px),radial-gradient(circle at 80% 35%,#fff0a0 0 3px,transparent 4px),#b58a43;transform:rotate(-8deg)}
+.intro-kids-play{position:absolute;left:47%;bottom:3%;width:17%;height:19%}
+.life-child{bottom:0;width:clamp(10px,1.1vw,16px);height:56%;background:linear-gradient(90deg,#236b85,#4bb7b0 60%,#f4d16d)}
+.child-one{left:5%;animation:childSkip .8s ease-in-out infinite alternate}
+.child-two{right:15%;height:63%;background:linear-gradient(90deg,#a63c63,#ee7e8a 60%,#f4c76b);animation:childSkip .7s .25s ease-in-out infinite alternate}
+.life-ball{position:absolute;right:2%;bottom:12%;width:clamp(8px,1vw,14px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff6b0,#e4a529 65%,#a75c1e);animation:ballPlay 1.2s ease-in-out infinite alternate}
+@keyframes celebrationSway{from{translate:0 0;rotate:-3deg}to{translate:0 -3px;rotate:4deg}}
+@keyframes drumBounce{from{rotate:-22deg;translate:0 0}to{rotate:-9deg;translate:0 -3px}}
+@keyframes childSkip{from{translate:0 0;rotate:-7deg}to{translate:0 -7px;rotate:9deg}}
+@keyframes ballPlay{from{translate:0 0}to{translate:-13px -15px}}
+.cinematic-video{
+  background:linear-gradient(180deg,#79b6a0 0%,#c4dca6 32%,#e9d18a 55%,#507e49 56%,#234f36 100%)!important;
+  border:1px solid #d6a32388;
+}
+.cinematic-sky{background:linear-gradient(180deg,#70aaa0 0%,#bdd8a2 62%,#f0d28b 100%)!important}
+.cinematic-river{background:linear-gradient(180deg,#6eb2a0dd,#317d70 55%,#1c5d50)!important;opacity:.86}
+.cinematic-palms{opacity:.65;filter:drop-shadow(0 3px 4px #163b2455)}
+.cinematic-glow{background:radial-gradient(ellipse at 50% 65%,#ffedac55,transparent 65%)!important}
+.cinematic-festival{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.cinematic-band-person{bottom:9%;width:clamp(12px,2vw,23px);height:35%;background:linear-gradient(90deg,#8e3b2d,#e4a14e 65%,#b95736)}
+.cinematic-band-person.band-a{left:27%;animation-delay:-.4s}
+.cinematic-band-person.band-b{left:38%;height:39%;background:linear-gradient(90deg,#1f4b38,#6c9d53 65%,#244d35);animation-delay:-.9s}
+.cinematic-drum{position:absolute;left:34%;bottom:22%;width:clamp(22px,4vw,44px);height:clamp(16px,2.8vw,30px);border:3px solid #8a4d21;border-radius:50%;background:repeating-linear-gradient(90deg,#c68a3c 0 5px,#f3d08a 6px 9px);transform:rotate(-16deg);animation:drumBounce .65s ease-in-out infinite alternate}
+.cinematic-nadaswaram{position:absolute;left:24%;bottom:33%;width:clamp(30px,6vw,68px);height:5px;border-radius:99px;background:linear-gradient(90deg,#e9c16c,#8b4a21);transform:rotate(-22deg)}
+.cinematic-family{bottom:8%;width:clamp(12px,1.8vw,20px);height:32%;background:linear-gradient(90deg,#9e315d,#e66c8b 55%,#f4b75e)}
+.cinematic-family.family-a{left:57%}.cinematic-family.family-b{left:64%;height:37%;background:linear-gradient(90deg,#f0e5bf,#fff7db 65%,#b5a67e);animation-delay:-.6s}.cinematic-family.family-c{left:72%;height:29%;background:linear-gradient(90deg,#a77a1c,#e8bf4d 55%,#4e8245);animation-delay:-1s}
+.cinematic-kid{bottom:5%;width:clamp(9px,1.3vw,14px);height:20%;background:linear-gradient(90deg,#236b85,#4bb7b0 60%,#f4d16d)}
+.cinematic-kid.kid-a{left:49%;animation:childSkip .8s ease-in-out infinite alternate}.cinematic-kid.kid-b{left:79%;background:linear-gradient(90deg,#a63c63,#ee7e8a 60%,#f4c76b);animation:childSkip .7s .2s ease-in-out infinite alternate}
+.cinematic-marigold-string{position:absolute;left:15%;right:15%;top:18%;height:22%;border-top:2px solid #f2ce6d;border-radius:0 0 50% 50%;filter:drop-shadow(0 3px 4px #fff0a455)}
+.cinematic-marigold-string:after{content:"";position:absolute;left:0;right:0;top:0;height:100%;background:radial-gradient(ellipse at 10% 30%,#f6c64c 0 4px,transparent 5px),radial-gradient(ellipse at 30% 60%,#fff0ad 0 4px,transparent 5px),radial-gradient(ellipse at 50% 80%,#f6c64c 0 4px,transparent 5px),radial-gradient(ellipse at 70% 60%,#fff0ad 0 4px,transparent 5px),radial-gradient(ellipse at 90% 30%,#f6c64c 0 4px,transparent 5px)}
+.cinematic-caption{z-index:5}
+@media(max-width:640px){
+ .intro-band{left:20%;width:28%;bottom:8%}.intro-men-chat{right:5%;width:23%}.intro-women-work{left:3%;width:22%}.intro-kids-play{left:43%;width:22%}
+ .intro-cultural-life .life-person{transform:scale(.9);transform-origin:bottom center}
+ .cinematic-band-person.band-a{left:20%}.cinematic-band-person.band-b{left:34%}.cinematic-drum{left:29%}.cinematic-nadaswaram{left:16%}
+}
+@media(prefers-reduced-motion:reduce){
+ .life-person,.life-child,.cinematic-band-person,.cinematic-family,.cinematic-kid,.life-drum,.life-ball{animation:none!important}
+}
