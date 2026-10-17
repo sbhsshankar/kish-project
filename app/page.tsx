@@ -371,7 +371,7 @@ export default function Home() {
       </section>
 
       <section className="section-shell">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-[32px] border border-[#D4A72C]/30 bg-gradient-to-br from-[#4B0B15] via-[#27070D] to-[#160406] p-8 text-center shadow-[0_30px_100px_rgba(0,0,0,.4)] md:p-16">
+        <div className="moment-banner mx-auto max-w-5xl overflow-hidden rounded-[32px] border border-[#D4A72C]/30 p-8 text-center shadow-[0_30px_100px_rgba(0,0,0,.16)] md:p-16">
           <div className="ornament">✦</div>
           <div className="eyebrow mt-5">YOUR CELEBRATION, YOUR WAY</div>
           <h2 className="section-title mt-3">Tell us the moment.<br /><span>We'll help create the Sandadi.</span></h2>
