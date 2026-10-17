@@ -194,7 +194,6 @@ export default function Home() {
           <div className="site-intro-glow" />
           <div className="intro-cinematic-scene" aria-hidden="true">
             <div className="intro-sky" />
-            <div className="intro-sun" />
             <div className="intro-water" />
             <div className="intro-garden intro-garden-back" />
             <div className="intro-palm intro-palm-left"><i /><b /><em /></div>
@@ -205,6 +204,12 @@ export default function Home() {
             <div className="intro-festoon-lights"><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <div className="intro-stage"><span className="intro-stage-glow" /><span className="intro-stage-floral" /></div>
             <div className="intro-guest guest-one" /><div className="intro-guest guest-two" /><div className="intro-guest guest-three" /><div className="intro-guest guest-four" /><div className="intro-guest guest-five" />
+            <div className="intro-cultural-life" aria-hidden="true">
+              <div className="intro-band"><span className="life-person band-lead" /><span className="life-person band-drummer" /><span className="life-drum" /><span className="life-nadaswaram" /></div>
+              <div className="intro-men-chat"><span className="life-person chat-one" /><span className="life-person chat-two" /></div>
+              <div className="intro-women-work"><span className="life-person woman-one" /><span className="life-person woman-two" /><span className="life-flower-tray" /></div>
+              <div className="intro-kids-play"><span className="life-child child-one" /><span className="life-child child-two" /><span className="life-ball" /></div>
+            </div>
             <div className="intro-floating-petals"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <div className="intro-scene-haze" />
           </div>
@@ -257,10 +262,16 @@ export default function Home() {
           <div className="mx-auto mt-16 max-w-3xl rounded-3xl border border-[#D4A72C]/25 bg-black/20 p-3 shadow-2xl">
             <div className="cinematic-video" aria-label="Cinematic Godavari destination preview">
               <div className="cinematic-sky" />
-              <div className="cinematic-sun" />
               <div className="cinematic-river" />
               <div className="cinematic-palms" />
               <div className="cinematic-glow" />
+              <div className="cinematic-festival" aria-hidden="true">
+                <span className="cinematic-band-person band-a" /><span className="cinematic-band-person band-b" />
+                <span className="cinematic-drum" /><span className="cinematic-nadaswaram" />
+                <span className="cinematic-family family-a" /><span className="cinematic-family family-b" /><span className="cinematic-family family-c" />
+                <span className="cinematic-kid kid-a" /><span className="cinematic-kid kid-b" />
+                <span className="cinematic-marigold-string" />
+              </div>
               <div className="cinematic-caption">
                 <div className="pulse-ring">▶</div>
                 <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[#F2D47A]">A glimpse of Sandadi</p>
@@ -331,7 +342,6 @@ export default function Home() {
             <div className="kobbari-story"><div className="story-number">01</div><h3>A destination people remember.</h3><p>Perfect for destination weddings, pre-wedding shoots, intimate family functions, birthdays and relaxed gatherings where nature is the backdrop.</p><div className="story-tags"><span>🌴 Coconut Grove</span><span>🌊 Canal / Backwater</span><span>📸 Photo Friendly</span><span>✨ Open-Air Events</span></div><button onClick={() => { setDestination("Kobbari Thota"); setPlannerOpen(true); }} className="gold-button large mt-7">Plan an Event Here →</button></div>
           </div>
           <div className="photo-gallery mt-5">{kobbariPhotos.slice(1).map((photo) => (<button key={photo.src} className="gallery-photo" onClick={() => { setDestination("Kobbari Thota"); setPlannerOpen(true); }}><img src={photo.src} alt={photo.title} /><span className="gallery-caption"><strong>{photo.title}</strong><small>{photo.sub}</small></span></button>))}</div>
-          <div className="mt-6 rounded-2xl border border-[#D4A72C]/20 bg-[#1D0508]/80 p-5 text-sm text-[#BBAE8B]"><span className="text-[#FFD34E]">Why it fits Sandadi:</span> Konaseema is officially described as a lush Godavari-delta destination with coconut groves, fields and waterways, making this visual language a natural fit for the Sandadi destination concept. <span className="ml-1 text-[#756B58]">Destination visuals are temporary web references for the prototype. Replace them with your own/licensed photographs before launch.</span></div>
         </div>
       </section>
 
