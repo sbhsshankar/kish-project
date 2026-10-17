@@ -573,3 +573,81 @@ header.fixed{z-index:260!important}
 /* Restore the previous simple hero backdrop and remove the dancing SVG artwork. */
 .hero-wedding-art,.hero-scene-vignette{display:none!important}
 .hero-cultural-backdrop{opacity:.34!important;background:linear-gradient(180deg,#d8ead6 0%,#f4e5b9 44%,#c6d8a7 60%,#759b63 100%)!important;-webkit-mask-image:none!important;mask-image:none!important}
+
+
+/* Godavari opening: calm river-and-sun scenery, without animated background movement. */
+.intro-sun{
+  display:block!important;position:absolute;z-index:1;left:68%;top:22%;width:clamp(58px,9vw,120px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 38% 35%,#fff9cf 0%,#ffe88b 45%,#f6bc45 72%,#f6bc4500 74%);
+  box-shadow:0 0 42px #ffdf7a66;filter:none;animation:none!important;
+}
+.intro-cinematic-scene .intro-sky,.intro-cinematic-scene .intro-water,
+.intro-cinematic-scene .intro-garden,.intro-cinematic-scene .intro-palm,
+.intro-cinematic-scene .intro-coconut-row,.intro-cinematic-scene .intro-event-lawn,
+.intro-cinematic-scene .intro-event-canopy,.intro-cinematic-scene .intro-festoon-lights,
+.intro-cinematic-scene .intro-stage,.intro-cinematic-scene .intro-guest,
+.intro-cinematic-scene .intro-floating-petals,.intro-cinematic-scene .intro-scene-haze{
+  animation:none!important;transition:none!important;
+}
+.intro-floating-petals{opacity:.22!important}
+
+/* The lower preview uses full, colourful human figures rather than thin stick silhouettes. */
+.cinematic-festival .cinematic-dancer{
+  position:absolute;display:block;bottom:7%;width:clamp(34px,4.8vw,58px);height:clamp(88px,14vw,132px);
+  transform-origin:50% 100%;animation:realDancerMove 1.15s ease-in-out infinite alternate;
+}
+.cinematic-dancer .dancer-head{
+  position:absolute;left:34%;top:0;width:32%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 34% 28%,#e6b88b,#a96540 76%);z-index:4;
+  box-shadow:0 -4px 0 2px #29251b;
+}
+.cinematic-dancer .dancer-hair{position:absolute;left:29%;top:0;width:39%;height:20%;border-radius:50% 50% 35% 35%;background:#211d16;z-index:5}
+.cinematic-dancer .dancer-body{
+  position:absolute;left:23%;top:23%;width:54%;height:44%;border-radius:35% 35% 12% 12%;
+  background:linear-gradient(90deg,#a93453,#f17a88 52%,#ffd06b);z-index:3;
+  box-shadow:inset 4px 0 #ffffff35,0 2px 4px #18382344;
+}
+.cinematic-dancer .dancer-arm{
+  position:absolute;top:27%;width:15%;height:38%;border-radius:99px;
+  background:linear-gradient(90deg,#b9774e,#e0a477);z-index:2;transform-origin:50% 8%;
+}
+.cinematic-dancer .arm-left{left:13%;rotate:32deg;animation:realDancerArm .65s ease-in-out infinite alternate}
+.cinematic-dancer .arm-right{right:13%;rotate:-38deg;animation:realDancerArm .65s -.3s ease-in-out infinite alternate}
+.cinematic-dancer .dancer-leg{
+  position:absolute;top:61%;width:17%;height:31%;border-radius:0 0 45% 45%;
+  background:linear-gradient(90deg,#74432d,#d39a64);z-index:1;transform-origin:50% 0;
+}
+.cinematic-dancer .leg-left{left:31%;rotate:8deg;animation:realDancerLeg .55s ease-in-out infinite alternate}
+.cinematic-dancer .leg-right{right:31%;rotate:-9deg;animation:realDancerLeg .55s -.25s ease-in-out infinite alternate}
+.cinematic-dancer.dancer-drummer{left:24%;height:clamp(90px,14vw,132px)}
+.cinematic-dancer.dancer-drummer .dancer-body{background:linear-gradient(90deg,#8b3d2d,#e7a14b 58%,#b65a36)}
+.cinematic-dancer.dancer-drummer .dancer-drum{
+  position:absolute;left:22%;top:43%;width:62%;height:20%;border:3px solid #75451f;border-radius:45%;
+  background:repeating-linear-gradient(90deg,#c68a3c 0 5px,#f3d08a 6px 9px);z-index:5;rotate:-15deg;
+}
+.cinematic-dancer.dancer-woman{left:48%;height:clamp(94px,15vw,140px);animation-delay:-.35s}
+.cinematic-dancer.dancer-woman .dancer-body{left:13%;top:23%;width:74%;height:58%;border-radius:35% 35% 48% 48%;background:linear-gradient(90deg,#8b2456,#df5682 52%,#f7bd55);clip-path:polygon(25% 0,75% 0,100% 100%,0 100%)}
+.cinematic-dancer.dancer-woman .dancer-hair{height:28%;border-radius:50% 50% 45% 45%;box-shadow:4px 12px 0 -3px #211d16}
+.cinematic-dancer.dancer-man{left:65%;height:clamp(82px,13vw,120px);animation-delay:-.7s}
+.cinematic-dancer.dancer-man .dancer-body{background:linear-gradient(90deg,#1e5a45,#75a85d 58%,#e6c879);border-radius:30% 30% 8% 8%}
+.cinematic-dancer.dancer-child{left:38%;height:clamp(55px,9vw,82px);width:clamp(25px,3.3vw,38px);animation-duration:.72s}
+.cinematic-dancer.dancer-child .dancer-head{width:38%;left:31%}
+.cinematic-dancer.dancer-child .dancer-body{top:28%;height:39%;background:linear-gradient(90deg,#246c89,#4bb7b0 60%,#f4d16d)}
+.cinematic-dancer.dancer-child .dancer-arm{top:30%;height:29%}
+.cinematic-dancer.dancer-child .dancer-leg{top:61%;height:25%}
+.cinematic-dancer.dancer-woman-two{left:78%;height:clamp(84px,13vw,122px);animation-delay:-.5s;transform:scale(.9);transform-origin:bottom center}
+@keyframes realDancerMove{from{translate:0 0;rotate:-4deg}to{translate:0 -5px;rotate:5deg}}
+@keyframes realDancerArm{from{rotate:-48deg}to{rotate:42deg}}
+@keyframes realDancerLeg{from{rotate:-12deg}to{rotate:15deg}}
+@media(max-width:640px){
+ .intro-sun{left:70%;top:19%;width:58px}
+ .cinematic-festival .cinematic-dancer{transform:scale(.78);transform-origin:bottom center}
+ .cinematic-dancer.dancer-drummer{left:16%}
+ .cinematic-dancer.dancer-child{left:34%}
+ .cinematic-dancer.dancer-woman{left:47%}
+ .cinematic-dancer.dancer-man{left:64%}
+ .cinematic-dancer.dancer-woman-two{left:79%}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinematic-festival .cinematic-dancer,.cinematic-dancer *{animation:none!important}
+}
