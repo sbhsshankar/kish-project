@@ -194,6 +194,7 @@ export default function Home() {
           <div className="site-intro-glow" />
           <div className="intro-cinematic-scene" aria-hidden="true">
             <div className="intro-sky" />
+            <div className="intro-sun" />
             <div className="intro-water" />
             <div className="intro-garden intro-garden-back" />
             <div className="intro-palm intro-palm-left"><i /><b /><em /></div>
@@ -270,10 +271,11 @@ export default function Home() {
               <div className="cinematic-palms" />
               <div className="cinematic-glow" />
               <div className="cinematic-festival" aria-hidden="true">
-                <span className="cinematic-band-person band-a" /><span className="cinematic-band-person band-b" />
-                <span className="cinematic-drum" /><span className="cinematic-nadaswaram" />
-                <span className="cinematic-family family-a" /><span className="cinematic-family family-b" /><span className="cinematic-family family-c" />
-                <span className="cinematic-kid kid-a" /><span className="cinematic-kid kid-b" />
+                <span className="cinematic-dancer dancer-drummer" aria-label="Traditional drummer dancing"><i className="dancer-head" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /><i className="dancer-drum" /></span>
+                <span className="cinematic-dancer dancer-woman" aria-label="Woman dancing in a festive sari"><i className="dancer-head" /><i className="dancer-hair" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /></span>
+                <span className="cinematic-dancer dancer-man" aria-label="Man dancing at the celebration"><i className="dancer-head" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /></span>
+                <span className="cinematic-dancer dancer-child" aria-label="Child dancing"><i className="dancer-head" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /></span>
+                <span className="cinematic-dancer dancer-woman dancer-woman-two" aria-label="Another woman dancing"><i className="dancer-head" /><i className="dancer-hair" /><i className="dancer-body" /><i className="dancer-arm arm-left" /><i className="dancer-arm arm-right" /><i className="dancer-leg leg-left" /><i className="dancer-leg leg-right" /></span>
                 <span className="cinematic-marigold-string" />
               </div>
               <div className="cinematic-caption">
