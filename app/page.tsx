@@ -131,6 +131,9 @@ export default function Home() {
   const [plannerOpen, setPlannerOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [introVisible, setIntroVisible] = useState(true);
+  const [galleryOpen, setGalleryOpen] = useState<string | null>(null);
+  const [activePhoto, setActivePhoto] = useState<{ src: string; title: string; destination: string } | null>(null);
+  const [eventDate, setEventDate] = useState("");
 
   useEffect(() => {
     const timer = window.setTimeout(() => setIntroVisible(false), 4200);
@@ -176,6 +179,7 @@ export default function Home() {
       {introVisible && (
         <div className="site-intro" aria-label="Opening Sandadi">
           <div className="site-intro-glow" />
+          <div className="site-intro-wedding" aria-hidden="true"><div className="wedding-hangings"><span /><span /><span /><span /><span /><span /><span /><span /><span /></div><div className="wedding-stage" /><div className="wedding-music"><span>🥁</span><span>🎺</span><span>🌼</span></div></div>
           <div className="site-intro-mark">✦</div>
           <div className="telugu-logo site-intro-title" aria-label="సందడి">సందడి</div>
           <div className="site-intro-sub">DESTINATION IN GODAVARI</div>
@@ -274,7 +278,7 @@ export default function Home() {
                 <button onClick={() => setDestination(destination === item.name ? "" : item.name)} className={`destination-card destination-${index + 1}`} style={{ backgroundImage: `linear-gradient(to top, rgba(8,2,3,.9), rgba(8,2,3,.08) 65%), url(${destinationPhotos[item.name]})` }} aria-expanded={destination === item.name}>
                   <div className="relative z-10 mt-auto text-left"><span className="choice-name">{item.name}</span><span className="choice-sub">{item.sub}</span><span className="destination-open">{destination === item.name ? "Close gallery −" : "View 5 photos +"}</span></div>
                 </button>
-                {destination === item.name && <div className="destination-mini-gallery">{(destinationGalleries[item.name] || []).slice(0,5).map((photo) => <button key={photo.src} onClick={() => { setDestination(item.name); setPlannerOpen(true); }} className="destination-mini-photo"><img src={photo.src} alt={photo.title} loading="lazy" /><span>{photo.title}</span></button>)}<button className="gold-button mt-2 w-full" onClick={() => { setDestination(item.name); setPlannerOpen(true); }}>Plan here →</button></div>}
+                {destination === item.name && <div className="destination-mini-gallery">{(destinationGalleries[item.name] || []).slice(0,5).map((photo) => <button key={photo.src} onClick={() => { setActivePhoto({ ...photo, destination: item.name }); setGalleryOpen(item.name); }} className="destination-mini-photo"><img src={photo.src} alt={photo.title} loading="lazy" /><span>{photo.title}</span></button>)}<button className="gold-button mt-2 w-full" onClick={() => { setDestination(item.name); setPlannerOpen(true); }}>Plan here →</button></div>}
               </div>
             ))}
           </div>
@@ -348,6 +352,14 @@ export default function Home() {
         </div>
       </footer>
 
+      {activePhoto && galleryOpen && (
+        <div className="photo-lightbox" onClick={() => { setActivePhoto(null); setGalleryOpen(null); }}>
+          <button className="lightbox-close" aria-label="Close photo" onClick={() => { setActivePhoto(null); setGalleryOpen(null); }}>×</button>
+          <button className="lightbox-arrow" aria-label="Previous photo" onClick={(e) => { e.stopPropagation(); const list = destinationGalleries[galleryOpen] || []; const idx = list.findIndex((p) => p.src === activePhoto.src); const next = list[(idx - 1 + list.length) % list.length]; setActivePhoto({ ...next, destination: galleryOpen }); }}>‹</button>
+          <figure className="lightbox-figure" onClick={(e) => e.stopPropagation()}><img src={activePhoto.src} alt={activePhoto.title} /><figcaption><span>{activePhoto.destination}</span><strong>{activePhoto.title}</strong></figcaption></figure>
+          <button className="lightbox-arrow" aria-label="Next photo" onClick={(e) => { e.stopPropagation(); const list = destinationGalleries[galleryOpen] || []; const idx = list.findIndex((p) => p.src === activePhoto.src); const next = list[(idx + 1) % list.length]; setActivePhoto({ ...next, destination: galleryOpen }); }}>›</button>
+        </div>
+      )}
       {plannerOpen && (
         <div className="modal-backdrop" onClick={() => setPlannerOpen(false)}>
           <div className="planner-panel" onClick={(e) => e.stopPropagation()}>
@@ -365,7 +377,7 @@ export default function Home() {
                   <label>Event<select value={event} onChange={(e) => setEvent(e.target.value)}><option value="">Choose event</option>{events.map(x => <option key={x.name}>{x.name}</option>)}</select></label>
                   <label>Destination<select value={destination} onChange={(e) => setDestination(e.target.value)}><option value="">Choose destination</option>{destinations.map(x => <option key={x.name}>{x.name}</option>)}</select></label>
                   <label>Budget<select value={budget} onChange={(e) => setBudget(e.target.value)}><option value="">Choose budget</option><option>₹50K</option><option>₹1L</option><option>₹2L</option><option>₹5L</option><option>Custom</option></select></label>
-                  <label>Date<input type="date" /></label>
+                  <label className="date-field">Event date<input type="date" value={eventDate} onChange={(e) => setEventDate(e.target.value)} onClick={(e) => { const el = e.currentTarget as HTMLInputElement & { showPicker?: () => void }; try { el.showPicker?.(); } catch {} }} /></label>
                   <label>Guests<input type="number" min="1" placeholder="Approx. guests" /></label>
                   <label>Location<input placeholder="Town / preferred area" /></label>
                 </div>
