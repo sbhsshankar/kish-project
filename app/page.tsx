@@ -235,14 +235,15 @@ export default function Home() {
 
       <section id="home" className="hero relative flex min-h-screen items-center justify-center px-5 pt-24">
         <div className="hero-cultural-backdrop" aria-hidden="true">
-          <div className="hero-cultural-horizon" />
-          <div className="hero-cultural-palm palm-a" /><div className="hero-cultural-palm palm-b" />
-          <div className="hero-cultural-canopy" />
-          <span className="hero-scene-person hero-band-a" /><span className="hero-scene-person hero-band-b" />
-          <span className="hero-scene-drum" /><span className="hero-scene-nadaswaram" />
-          <span className="hero-scene-person hero-guest-a" /><span className="hero-scene-person hero-guest-b" /><span className="hero-scene-person hero-guest-c" />
-          <span className="hero-scene-child hero-child-a" /><span className="hero-scene-child hero-child-b" />
-          <div className="hero-cultural-lights" />
+          <div className="godavari-sun" />
+          <div className="godavari-temple"><i /><i /><i /><b /></div>
+          <div className="godavari-bridge"><span /><span /><span /><span /><span /></div>
+          <div className="godavari-river" />
+          <div className="godavari-river-glint" />
+          <div className="godavari-bank godavari-bank-left" />
+          <div className="godavari-bank godavari-bank-right" />
+          <div className="godavari-palm godavari-palm-left"><i /><i /><i /><i /><i /></div>
+          <div className="godavari-palm godavari-palm-right"><i /><i /><i /><i /><i /></div>
         </div>
         <div className="hero-orb hero-orb-one" />
         <div className="hero-orb hero-orb-two" />
@@ -285,6 +286,23 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="pandhiri-setup-strip" aria-label="Traditional green pandhiri event setup animation">
+        <div className="pandhiri-scene" aria-hidden="true">
+          <div className="pandhiri-sky" />
+          <div className="pandhiri-back-garden" />
+          <div className="pandhiri-canopy"><span /><span /><span /><span /><span /></div>
+          <div className="pandhiri-frame frame-left" /><div className="pandhiri-frame frame-right" />
+          <div className="pandhiri-flower-line"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
+          <div className="pandhiri-stage" />
+          <div className="pandhiri-chair chair-one" /><div className="pandhiri-chair chair-two" /><div className="pandhiri-chair chair-three" />
+          <div className="setup-person setup-person-one"><i className="setup-head" /><i className="setup-body" /><i className="setup-arm" /><i className="setup-leg" /></div>
+          <div className="setup-person setup-person-two"><i className="setup-head" /><i className="setup-body" /><i className="setup-arm" /><i className="setup-leg" /></div>
+          <div className="setup-person setup-person-three"><i className="setup-head" /><i className="setup-body" /><i className="setup-arm" /><i className="setup-leg" /></div>
+          <div className="pandhiri-floor" />
+          <div className="setup-label">A GREEN PANDHIRI, MADE FOR YOUR SANDADI</div>
         </div>
       </section>
 
