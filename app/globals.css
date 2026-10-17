@@ -207,3 +207,34 @@ header .telugu-logo{color:var(--sandadi-forest)}
 @keyframes petalFall{0%{transform:translate3d(0,-8vh,0) rotate(0);opacity:0}10%{opacity:.85}85%{opacity:.8}100%{transform:translate3d(5vw,110vh,0) rotate(520deg);opacity:0}}
 @media(max-width:640px){.intro-event-canopy{left:17%;right:17%;bottom:25%;height:23%}.intro-stage{left:23%;right:23%;bottom:15%}.intro-festoon-lights{left:15%;right:15%;bottom:47%}.intro-palm{height:46%}.intro-palm-left{left:-9%}.intro-palm-right{right:-9%}.intro-coconut-row{bottom:20%}.site-intro-title{font-size:4.5rem}.site-intro-wordmark{letter-spacing:.2em}.intro-guest{bottom:10%}}
 @media(prefers-reduced-motion:reduce){.intro-cinematic-scene,.intro-sky,.intro-water,.intro-palm,.intro-floating-petals i,.intro-event-canopy,.intro-festoon-lights i,.intro-guest{animation:none!important}}
+
+/* Animated banyan-inspired frame and readable nature palette */
+.banyan-frame{position:fixed;inset:0;z-index:35;pointer-events:none;overflow:hidden;opacity:.82;mix-blend-mode:multiply}
+.banyan-edge{position:absolute;top:0;bottom:0;width:clamp(12px,2vw,30px);background:linear-gradient(90deg,#285936 0 3px,transparent 3px 100%),repeating-linear-gradient(180deg,transparent 0 30px,#6e9446 31px 33px,transparent 34px 61px);transform-origin:top center}
+.banyan-edge-left{left:0;border-right:1px solid #c7a74466;background:radial-gradient(ellipse 15px 7px at 12px 6%,#628d43 0 65%,transparent 70%),radial-gradient(ellipse 15px 7px at 22px 15%,#8da957 0 65%,transparent 70%),radial-gradient(ellipse 14px 7px at 10px 24%,#416f39 0 65%,transparent 70%),linear-gradient(90deg,#285936 0 3px,transparent 3px 100%),repeating-linear-gradient(180deg,transparent 0 30px,#6e9446 31px 33px,transparent 34px 61px);animation:banyanSway 7s ease-in-out infinite alternate}
+.banyan-edge-right{right:0;border-left:1px solid #c7a74466;background:radial-gradient(ellipse 15px 7px at calc(100% - 12px) 8%,#628d43 0 65%,transparent 70%),radial-gradient(ellipse 15px 7px at calc(100% - 22px) 17%,#8da957 0 65%,transparent 70%),radial-gradient(ellipse 14px 7px at calc(100% - 10px) 26%,#416f39 0 65%,transparent 70%),linear-gradient(270deg,#285936 0 3px,transparent 3px 100%),repeating-linear-gradient(180deg,transparent 0 34px,#6e9446 35px 37px,transparent 38px 65px);animation:banyanSway 8s ease-in-out infinite alternate-reverse}
+.banyan-edge i{position:absolute;left:3px;width:12px;height:24px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,#9ebc62,#376b37 72%);opacity:.88;box-shadow:inset 1px 1px #d8e69a66;transform:rotate(-32deg);animation:leafDrift 5s ease-in-out infinite alternate}
+.banyan-edge i:nth-child(1){top:7%}.banyan-edge i:nth-child(2){top:15%;left:10px;transform:rotate(28deg)}.banyan-edge i:nth-child(3){top:23%}.banyan-edge i:nth-child(4){top:31%;left:10px;transform:rotate(28deg)}.banyan-edge i:nth-child(5){top:39%}.banyan-edge i:nth-child(6){top:47%;left:10px;transform:rotate(28deg)}.banyan-edge i:nth-child(7){top:55%}.banyan-edge i:nth-child(8){top:63%;left:10px;transform:rotate(28deg)}.banyan-edge i:nth-child(9){top:71%}.banyan-edge i:nth-child(10){top:79%;left:10px;transform:rotate(28deg)}.banyan-edge i:nth-child(11){top:87%}.banyan-edge i:nth-child(12){top:95%;left:10px;transform:rotate(28deg)}
+.banyan-edge-right i{left:auto;right:3px;transform:rotate(55deg)}.banyan-edge-right i:nth-child(even){right:10px;transform:rotate(-30deg)}
+.banyan-top-vines{position:absolute;left:2%;right:2%;top:0;height:clamp(14px,2.5vh,28px);border-top:2px solid #2b6036;background:linear-gradient(180deg,#d6e3b877,transparent);display:flex;justify-content:space-around}
+.banyan-top-vines:before{content:"";position:absolute;left:0;right:0;top:0;height:100%;background:repeating-linear-gradient(90deg,transparent 0 38px,#4b793d 39px 41px,transparent 42px 78px);opacity:.8}
+.banyan-top-vines i{position:relative;top:5px;width:14px;height:23px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,#9ab95d,#326b39);transform:rotate(35deg);box-shadow:inset 1px 1px #e4edb077;animation:leafDrift 4.8s ease-in-out infinite alternate}
+.banyan-top-vines i:nth-child(even){top:8px;transform:rotate(120deg);animation-delay:-1.6s}
+@keyframes banyanSway{from{transform:translateX(0)}to{transform:translateX(3px)}}@keyframes leafDrift{from{filter:brightness(.92);translate:0 0;rotate:-3deg}to{filter:brightness(1.12);translate:2px 3px;rotate:4deg}}
+/* Darker green typography for legibility on light backgrounds */
+body{color:#234b2d!important}main.min-h-screen{color:#234b2d!important}
+.section-heading,.section-title,.section-title span,.section-shell h2,.section-shell h3{color:#234b2d!important}
+.section-copy,.section-shell p,.section-shell li,.section-shell label{color:#385b3a!important}
+.eyebrow,.story-number,.photo-kicker{color:#8b6813!important}
+.choice-name,.film-card h3,.package-card h3,.kobbari-story h3{color:#214d30!important}
+.choice-sub,.film-card p,.package-card p,.kobbari-story p{color:#4e6846!important}
+header .telugu-logo,header nav button{color:#285733!important}
+.hero .text-\\[\\#EADBB8\\],.hero p:not(.text-\\[\\#C9BD9B\\]){color:#345a37!important}
+.hero .text-\\[\\#F2D47A\\],.hero .text-\\[\\#FFD34E\\]{color:#80600f!important}
+.destination-mini-photo span{color:#214d30!important}
+.planner-panel h2,.planner-panel h3{color:#214d30!important}.planner-grid label{color:#345b37!important}
+.planner-grid input,.planner-grid select,.date-field input[type=date]{color:#214d30!important}
+.lightbox-figure figcaption{color:#fff7d0!important}.lightbox-figure figcaption span{color:#ffe27a!important}
+.photo-overlay,.photo-overlay *,.film-placeholder *,.destination-card *{text-shadow:0 2px 12px #102a18aa}
+@media(max-width:640px){.banyan-edge{width:11px}.banyan-edge i{width:9px;height:18px}.banyan-edge i:nth-child(even){left:2px;right:auto}.banyan-edge-right i:nth-child(even){left:auto;right:2px}.banyan-top-vines{left:11px;right:11px}.banyan-frame{opacity:.7}}
+@media(prefers-reduced-motion:reduce){.banyan-edge,.banyan-edge i,.banyan-top-vines i{animation:none!important}}
