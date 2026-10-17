@@ -204,12 +204,6 @@ export default function Home() {
             <div className="intro-festoon-lights"><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <div className="intro-stage"><span className="intro-stage-glow" /><span className="intro-stage-floral" /></div>
             <div className="intro-guest guest-one" /><div className="intro-guest guest-two" /><div className="intro-guest guest-three" /><div className="intro-guest guest-four" /><div className="intro-guest guest-five" />
-            <div className="intro-cultural-life" aria-hidden="true">
-              <div className="intro-band"><span className="life-person band-lead" /><span className="life-person band-drummer" /><span className="life-drum" /><span className="life-nadaswaram" /></div>
-              <div className="intro-men-chat"><span className="life-person chat-one" /><span className="life-person chat-two" /></div>
-              <div className="intro-women-work"><span className="life-person woman-one" /><span className="life-person woman-two" /><span className="life-flower-tray" /></div>
-              <div className="intro-kids-play"><span className="life-child child-one" /><span className="life-child child-two" /><span className="life-ball" /></div>
-            </div>
             <div className="intro-floating-petals"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
             <div className="intro-scene-haze" />
           </div>
