@@ -239,6 +239,16 @@ export default function Home() {
       </header>
 
       <section id="home" className="hero relative flex min-h-screen items-center justify-center px-5 pt-24">
+        <div className="hero-cultural-backdrop" aria-hidden="true">
+          <div className="hero-cultural-horizon" />
+          <div className="hero-cultural-palm palm-a" /><div className="hero-cultural-palm palm-b" />
+          <div className="hero-cultural-canopy" />
+          <span className="hero-scene-person hero-band-a" /><span className="hero-scene-person hero-band-b" />
+          <span className="hero-scene-drum" /><span className="hero-scene-nadaswaram" />
+          <span className="hero-scene-person hero-guest-a" /><span className="hero-scene-person hero-guest-b" /><span className="hero-scene-person hero-guest-c" />
+          <span className="hero-scene-child hero-child-a" /><span className="hero-scene-child hero-child-b" />
+          <div className="hero-cultural-lights" />
+        </div>
         <div className="hero-orb hero-orb-one" />
         <div className="hero-orb hero-orb-two" />
         <div className="absolute inset-5 rounded-[28px] border border-[#D4A72C]/20 md:inset-8" />
