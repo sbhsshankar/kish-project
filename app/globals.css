@@ -491,3 +491,41 @@ header.fixed{z-index:260!important}
 @media(prefers-reduced-motion:reduce){
  .life-person,.life-child,.cinematic-band-person,.cinematic-family,.cinematic-kid,.life-drum,.life-ball{animation:none!important}
 }
+
+
+/* Full hero backdrop: a soft, illustrated Godavari village wedding rather than a sun graphic. */
+.hero{isolation:isolate;overflow:hidden}
+.hero-cultural-backdrop{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.34;background:linear-gradient(180deg,#d8ead6 0%,#f4e5b9 44%,#c6d8a7 60%,#759b63 100%)}
+.hero-cultural-horizon{position:absolute;left:-5%;right:-5%;top:43%;height:28%;background:linear-gradient(180deg,#8ec1ad,#559987 60%,#2e7564);clip-path:polygon(0 23%,25% 0,48% 17%,72% 2%,100% 18%,100% 100%,0 100%);opacity:.72}
+.hero-cultural-horizon:after{content:"";position:absolute;inset:30% 0 0;background:repeating-linear-gradient(174deg,transparent 0 15px,#fff9dc66 16px 18px,transparent 19px 32px);animation:waterShimmer 5s linear infinite}
+.hero-cultural-palm{position:absolute;bottom:17%;width:clamp(100px,18vw,230px);height:52%;opacity:.6;transform-origin:bottom center;animation:palmSway 7s ease-in-out infinite alternate}
+.hero-cultural-palm:before{content:"";position:absolute;left:48%;bottom:0;width:12px;height:88%;border-radius:80% 20% 0 0;background:linear-gradient(90deg,#244b30,#789451,#315a38);transform:rotate(5deg)}
+.hero-cultural-palm:after{content:"";position:absolute;left:13%;top:0;width:90%;height:35%;background:repeating-conic-gradient(from 185deg at 50% 100%,#285735 0deg 7deg,#69934a 8deg 13deg,transparent 14deg 17deg);clip-path:polygon(50% 100%,0 20%,33% 45%,38% 0,52% 38%,82% 3%,69% 48%,100% 28%);filter:drop-shadow(0 4px 2px #244b3044)}
+.hero-cultural-palm.palm-a{left:-3%}.hero-cultural-palm.palm-b{right:-3%;transform:scaleX(-1);animation-delay:-2s}
+.hero-cultural-canopy{position:absolute;left:31%;right:31%;bottom:15%;height:25%;background:linear-gradient(90deg,#d9a32d,#fff0a8 25%,#fff8d9 50%,#e5b93e 76%,#f5d87a);clip-path:polygon(0 25%,50% 0,100% 25%,92% 100%,8% 100%);filter:drop-shadow(0 8px 14px #294e2b44)}
+.hero-cultural-canopy:after{content:"";position:absolute;inset:22% 8% 0;background:repeating-linear-gradient(90deg,#fff4c9 0 9%,#d9a52c 10% 12%,#fff0a4 13% 22%);opacity:.7}
+.hero-scene-person,.hero-scene-child{position:absolute;z-index:2;bottom:5%;width:clamp(13px,1.5vw,22px);height:clamp(34px,5vw,62px);border-radius:48% 48% 14% 14%;background:linear-gradient(90deg,#8d315c,#e66c8b 55%,#f4b75e);box-shadow:inset 2px 0 #fff7c633,0 3px 5px #16351d44;transform-origin:50% 100%;animation:celebrationSway 1.7s ease-in-out infinite alternate}
+.hero-scene-person:before,.hero-scene-child:before{content:"";position:absolute;left:28%;top:-19%;width:44%;aspect-ratio:1;border-radius:50%;background:#b77a50;box-shadow:0 -3px 0 2px #3c3424}
+.hero-band-a{left:26%;background:linear-gradient(90deg,#8e3b2d,#e4a14e 65%,#b95736)}
+.hero-band-b{left:37%;height:clamp(40px,6vw,74px);background:linear-gradient(90deg,#1f4b38,#6c9d53 65%,#244d35);animation-delay:-.8s}
+.hero-guest-a{left:60%;height:clamp(32px,4.4vw,55px);background:linear-gradient(90deg,#f0e5bf,#fff7db 65%,#b5a67e)}
+.hero-guest-b{left:68%;height:clamp(36px,5vw,60px);background:linear-gradient(90deg,#a77a1c,#e8bf4d 55%,#4e8245);animation-delay:-.6s}
+.hero-guest-c{left:76%;height:clamp(30px,4vw,50px);background:linear-gradient(90deg,#a63c63,#ee7e8a 60%,#f4c76b);animation-delay:-1s}
+.hero-scene-drum{position:absolute;left:32%;bottom:15%;z-index:3;width:clamp(24px,3vw,42px);height:clamp(17px,2vw,28px);border:3px solid #8a4d21;border-radius:50%;background:repeating-linear-gradient(90deg,#c68a3c 0 5px,#f3d08a 6px 9px);transform:rotate(-18deg);animation:drumBounce .65s ease-in-out infinite alternate}
+.hero-scene-nadaswaram{position:absolute;left:22%;bottom:27%;z-index:3;width:clamp(36px,5vw,64px);height:5px;border-radius:99px;background:linear-gradient(90deg,#e9c16c,#8b4a21);transform:rotate(-22deg)}
+.hero-scene-child{bottom:3%;width:clamp(10px,1vw,15px);height:clamp(21px,3vw,36px);background:linear-gradient(90deg,#236b85,#4bb7b0 60%,#f4d16d);animation:childSkip .8s ease-in-out infinite alternate}
+.hero-child-a{left:48%}.hero-child-b{left:53%;background:linear-gradient(90deg,#a63c63,#ee7e8a 60%,#f4c76b);animation-delay:-.3s}
+.hero-cultural-lights{position:absolute;z-index:2;left:20%;right:20%;top:16%;height:16%;border-top:2px solid #d7a52c;border-radius:0 0 50% 50%;filter:drop-shadow(0 3px 4px #fff0a455)}
+.hero-cultural-lights:after{content:"";position:absolute;left:0;right:0;top:0;height:100%;background:radial-gradient(ellipse at 10% 30%,#f6c64c 0 4px,transparent 5px),radial-gradient(ellipse at 30% 60%,#fff0ad 0 4px,transparent 5px),radial-gradient(ellipse at 50% 80%,#f6c64c 0 4px,transparent 5px),radial-gradient(ellipse at 70% 60%,#fff0ad 0 4px,transparent 5px),radial-gradient(ellipse at 90% 30%,#f6c64c 0 4px,transparent 5px)}
+.hero-content-reveal{position:relative;z-index:5}
+.hero-orb{z-index:1}
+@media(max-width:640px){
+ .hero-cultural-backdrop{opacity:.22}
+ .hero-cultural-canopy{left:22%;right:22%;height:19%;bottom:12%}
+ .hero-cultural-palm{height:43%;bottom:14%}
+ .hero-scene-person{transform:scale(.9);transform-origin:bottom center}
+ .hero-band-a{left:22%}.hero-band-b{left:33%}.hero-scene-drum{left:28%}.hero-scene-nadaswaram{left:16%}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-cultural-horizon:after,.hero-cultural-palm,.hero-scene-person,.hero-scene-child,.hero-scene-drum{animation:none!important}
+}
