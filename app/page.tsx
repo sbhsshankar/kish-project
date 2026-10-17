@@ -240,14 +240,113 @@ export default function Home() {
 
       <section id="home" className="hero relative flex min-h-screen items-center justify-center px-5 pt-24">
         <div className="hero-cultural-backdrop" aria-hidden="true">
-          <div className="hero-cultural-horizon" />
-          <div className="hero-cultural-palm palm-a" /><div className="hero-cultural-palm palm-b" />
-          <div className="hero-cultural-canopy" />
-          <span className="hero-scene-person hero-band-a" /><span className="hero-scene-person hero-band-b" />
-          <span className="hero-scene-drum" /><span className="hero-scene-nadaswaram" />
-          <span className="hero-scene-person hero-guest-a" /><span className="hero-scene-person hero-guest-b" /><span className="hero-scene-person hero-guest-c" />
-          <span className="hero-scene-child hero-child-a" /><span className="hero-scene-child hero-child-b" />
-          <div className="hero-cultural-lights" />
+          <svg className="hero-wedding-art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" role="presentation">
+            <defs>
+              <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#234b3d"/><stop offset=".52" stopColor="#678c68"/><stop offset="1" stopColor="#e1bd75"/></linearGradient>
+              <linearGradient id="heroGround" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#426b43"/><stop offset="1" stopColor="#183d2b"/></linearGradient>
+              <linearGradient id="heroCanopy" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#fff0b0"/><stop offset=".5" stopColor="#d9a640"/><stop offset="1" stopColor="#fff0b0"/></linearGradient>
+              <linearGradient id="heroSaree" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#e6a33f"/><stop offset="1" stopColor="#b53b57"/></linearGradient>
+              <linearGradient id="heroDhoti" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#fff2ce"/><stop offset="1" stopColor="#c7b783"/></linearGradient>
+              <radialGradient id="heroGlow"><stop stopColor="#ffe6a1" stopOpacity=".45"/><stop offset="1" stopColor="#ffe6a1" stopOpacity="0"/></radialGradient>
+            </defs>
+            <rect width="1440" height="900" fill="url(#heroSky)"/>
+            <ellipse cx="720" cy="390" rx="620" ry="390" fill="url(#heroGlow)"/>
+            <path d="M0 455 Q170 410 330 455 T650 450 T980 445 T1440 430 V900 H0Z" fill="#416f55" opacity=".8"/>
+            <path d="M0 525 Q210 485 420 525 T850 520 T1220 505 T1440 510 V900 H0Z" fill="#6d9564" opacity=".8"/>
+            <path d="M0 640 Q210 602 430 640 T850 632 T1200 625 T1440 640 V900 H0Z" fill="url(#heroGround)"/>
+            <g className="hero-art-palm" transform="translate(85 125)">
+              <path d="M70 570 Q85 345 125 120" fill="none" stroke="#4c5935" strokeWidth="24" strokeLinecap="round"/>
+              <path d="M125 130 Q20 42 -25 100 Q45 75 111 145 Q10 120 5 185 Q70 155 120 150 Q60 190 74 235 Q117 190 128 157 Q143 228 188 240 Q176 176 140 143 Q220 178 255 139 Q196 123 137 130 Q200 80 190 35 Q144 65 125 130Z" fill="#173f2e"/>
+              <path d="M125 130 Q25 80 5 120 M125 130 Q210 80 235 115 M125 130 Q85 60 100 20" stroke="#78965b" strokeWidth="8" fill="none" strokeLinecap="round"/>
+            </g>
+            <g className="hero-art-palm hero-art-palm-right" transform="translate(1195 110) scale(.92 1.05)">
+              <path d="M70 570 Q85 345 125 120" fill="none" stroke="#4c5935" strokeWidth="24" strokeLinecap="round"/>
+              <path d="M125 130 Q20 42 -25 100 Q45 75 111 145 Q10 120 5 185 Q70 155 120 150 Q60 190 74 235 Q117 190 128 157 Q143 228 188 240 Q176 176 140 143 Q220 178 255 139 Q196 123 137 130 Q200 80 190 35 Q144 65 125 130Z" fill="#173f2e"/>
+              <path d="M125 130 Q25 80 5 120 M125 130 Q210 80 235 115 M125 130 Q85 60 100 20" stroke="#78965b" strokeWidth="8" fill="none" strokeLinecap="round"/>
+            </g>
+            <g className="hero-art-lights" fill="none" stroke="#f5d579" strokeWidth="3">
+              <path d="M110 150 Q720 380 1330 150"/>
+              <path d="M250 190 Q720 365 1190 190" stroke="#ffe9a8" strokeWidth="2"/>
+            </g>
+            <g fill="#ffd66b">
+              <circle cx="185" cy="194" r="7"/><circle cx="305" cy="230" r="6"/><circle cx="430" cy="270" r="7"/><circle cx="555" cy="302" r="6"/><circle cx="690" cy="316" r="7"/><circle cx="820" cy="305" r="6"/><circle cx="950" cy="276" r="7"/><circle cx="1080" cy="235" r="6"/><circle cx="1210" cy="190" r="7"/>
+            </g>
+            <g transform="translate(390 285)">
+              <path d="M0 125 L330 0 L660 125 L620 340 L40 340Z" fill="url(#heroCanopy)" stroke="#fff0b2" strokeWidth="5"/>
+              <path d="M28 132 L330 24 L632 132" fill="none" stroke="#fff9d9" strokeWidth="13"/>
+              <path d="M50 145 V340 M145 110 V340 M240 74 V340 M330 38 V340 M420 74 V340 M515 110 V340 M610 145 V340" stroke="#fff8df" strokeWidth="13" opacity=".72"/>
+              <path d="M0 125 Q330 190 660 125" fill="none" stroke="#b87a29" strokeWidth="8"/>
+              <g fill="#c34e53"><circle cx="65" cy="150" r="11"/><circle cx="130" cy="163" r="11"/><circle cx="195" cy="173" r="11"/><circle cx="260" cy="180" r="11"/><circle cx="330" cy="184" r="11"/><circle cx="400" cy="180" r="11"/><circle cx="465" cy="173" r="11"/><circle cx="530" cy="163" r="11"/><circle cx="595" cy="150" r="11"/></g>
+            </g>
+            <g className="hero-art-band" transform="translate(250 595)">
+              <g className="hero-art-dancer hero-art-man-one">
+                <circle cx="0" cy="-92" r="20" fill="#a96d46"/><path d="M-18 -112 Q0 -132 18 -111" stroke="#282f25" strokeWidth="12" fill="none" strokeLinecap="round"/>
+                <path d="M-22 -67 Q0 -82 22 -67 L30 -4 L-27 -4Z" fill="#b54d37"/>
+                <path className="hero-art-arm arm-left" d="M-18 -62 L-50 -91 L-70 -118" fill="none" stroke="#a96d46" strokeWidth="13" strokeLinecap="round"/>
+                <path className="hero-art-arm arm-right" d="M18 -62 L42 -84 L60 -110" fill="none" stroke="#a96d46" strokeWidth="13" strokeLinecap="round"/>
+                <path d="M-25 -4 L-30 42 L-43 70 M24 -4 L30 40 L48 67" fill="none" stroke="#e9d9ac" strokeWidth="17" strokeLinecap="round"/>
+                <path d="M-46 70 L-57 72 M48 67 L60 70" stroke="#302e22" strokeWidth="11" strokeLinecap="round"/>
+              </g>
+              <g className="hero-art-dancer hero-art-drummer" transform="translate(105 12)">
+                <circle cx="0" cy="-92" r="19" fill="#bd8056"/><path d="M-18 -112 Q0 -129 18 -110" stroke="#302c22" strokeWidth="12" fill="none" strokeLinecap="round"/>
+                <path d="M-21 -68 L20 -68 L28 -2 L-26 -2Z" fill="#28634c"/>
+                <path d="M-18 -62 L-38 -30 L-58 -48 M18 -62 L35 -37 L52 -50" fill="none" stroke="#bd8056" strokeWidth="12" strokeLinecap="round"/>
+                <g className="hero-art-drum" transform="translate(7 -25) rotate(-14)"><ellipse cx="0" cy="0" rx="33" ry="24" fill="#b87b35" stroke="#f4d49a" strokeWidth="5"/><ellipse cx="0" cy="0" rx="22" ry="15" fill="#eacb86"/><path d="M-20 -12 L20 12 M-20 12 L20 -12" stroke="#9a5a2a" strokeWidth="3"/></g>
+                <path d="M-20 -2 L-28 42 L-43 68 M20 -2 L27 40 L42 68" fill="none" stroke="#f2e4c2" strokeWidth="16" strokeLinecap="round"/>
+              </g>
+              <g className="hero-art-nadaswaram" transform="translate(190 -10)">
+                <circle cx="0" cy="-92" r="19" fill="#9c623f"/><path d="M-18 -112 Q0 -130 18 -110" stroke="#302c22" strokeWidth="12" fill="none" strokeLinecap="round"/>
+                <path d="M-21 -68 L20 -68 L26 -2 L-25 -2Z" fill="#d5a72f"/>
+                <path d="M-16 -59 L-33 -36 L-12 -20 M16 -59 L36 -43 L54 -55" fill="none" stroke="#9c623f" strokeWidth="12" strokeLinecap="round"/>
+                <path d="M-12 -35 L68 -66" stroke="#7b4828" strokeWidth="8" strokeLinecap="round"/><path d="M50 -59 L78 -70" stroke="#edc46a" strokeWidth="13" strokeLinecap="round"/>
+                <path d="M-18 -2 L-22 42 L-34 67 M18 -2 L23 42 L37 67" fill="none" stroke="#f1dfb2" strokeWidth="16" strokeLinecap="round"/>
+              </g>
+            </g>
+            <g className="hero-art-guests">
+              <g className="hero-art-dancer hero-art-woman" transform="translate(860 690)">
+                <circle cx="0" cy="-104" r="19" fill="#a76b49"/><path d="M-17 -123 Q0 -142 17 -121" stroke="#272a20" strokeWidth="11" fill="none" strokeLinecap="round"/>
+                <path d="M-16 -81 Q0 -92 16 -81 L48 -7 Q0 12 -48 -7Z" fill="url(#heroSaree)"/><path d="M-13 -78 L-37 -48 L-62 -66 M13 -78 L34 -49 L58 -74" fill="none" stroke="#a76b49" strokeWidth="12" strokeLinecap="round"/>
+                <path d="M-37 -9 L37 -9" stroke="#e8c16a" strokeWidth="6"/>
+                <path d="M-18 -115 Q0 -132 18 -115" fill="none" stroke="#25271d" strokeWidth="5"/>
+                <circle cx="-22" cy="-100" r="4" fill="#eacb77"/><circle cx="22" cy="-100" r="4" fill="#eacb77"/>
+              </g>
+              <g className="hero-art-dancer hero-art-woman-two" transform="translate(970 704) scale(.86)">
+                <circle cx="0" cy="-104" r="19" fill="#bd8056"/><path d="M-18 -123 Q0 -141 18 -121" stroke="#292a20" strokeWidth="11" fill="none" strokeLinecap="round"/>
+                <path d="M-16 -81 Q0 -92 16 -81 L48 -7 Q0 12 -48 -7Z" fill="#e1b744"/><path d="M-13 -78 L-36 -49 L-58 -69 M13 -78 L35 -49 L60 -70" fill="none" stroke="#bd8056" strokeWidth="12" strokeLinecap="round"/>
+                <path d="M-36 -9 L36 -9" stroke="#b64353" strokeWidth="6"/>
+              </g>
+              <g className="hero-art-dancer hero-art-man-chat" transform="translate(1090 710) scale(.9)">
+                <circle cx="0" cy="-95" r="18" fill="#a96d46"/><path d="M-17 -114 Q0 -132 17 -113" stroke="#302c22" strokeWidth="11" fill="none" strokeLinecap="round"/>
+                <path d="M-21 -72 L20 -72 L26 -4 L-25 -4Z" fill="#35664a"/>
+                <path d="M-17 -62 L-40 -42 L-58 -54 M17 -62 L37 -45 L54 -54" fill="none" stroke="#a96d46" strokeWidth="12" strokeLinecap="round"/>
+                <path d="M-18 -4 L-22 40 L-36 67 M18 -4 L23 40 L38 67" fill="none" stroke="url(#heroDhoti)" strokeWidth="16" strokeLinecap="round"/>
+              </g>
+              <g className="hero-art-dancer hero-art-man-chat-two" transform="translate(1180 720) scale(.78)">
+                <circle cx="0" cy="-95" r="18" fill="#c18a5c"/><path d="M-17 -114 Q0 -132 17 -113" stroke="#302c22" strokeWidth="11" fill="none" strokeLinecap="round"/>
+                <path d="M-21 -72 L20 -72 L26 -4 L-25 -4Z" fill="#b64a39"/>
+                <path d="M-17 -62 L-40 -42 L-58 -54 M17 -62 L37 -45 L54 -54" fill="none" stroke="#c18a5c" strokeWidth="12" strokeLinecap="round"/>
+                <path d="M-18 -4 L-22 40 L-36 67 M18 -4 L23 40 L38 67" fill="none" stroke="#f0dfb4" strokeWidth="16" strokeLinecap="round"/>
+              </g>
+            </g>
+            <g className="hero-art-kids">
+              <g className="hero-art-child hero-art-child-one" transform="translate(700 765)">
+                <circle cx="0" cy="-48" r="13" fill="#b77b51"/><path d="M-12 -60 Q0 -73 12 -60" stroke="#292b22" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                <path d="M-13 -30 L13 -30 L19 2 L-18 2Z" fill="#48a7a0"/>
+                <path d="M-8 0 L-15 22 M9 0 L20 19" stroke="#d7bd83" strokeWidth="9" strokeLinecap="round"/>
+                <path className="hero-art-arm arm-left" d="M-11 -27 L-27 -45" stroke="#b77b51" strokeWidth="8" strokeLinecap="round"/><path className="hero-art-arm arm-right" d="M11 -27 L27 -43" stroke="#b77b51" strokeWidth="8" strokeLinecap="round"/>
+              </g>
+              <g className="hero-art-child hero-art-child-two" transform="translate(770 778) scale(.9)">
+                <circle cx="0" cy="-48" r="13" fill="#98603f"/><path d="M-12 -60 Q0 -73 12 -60" stroke="#292b22" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                <path d="M-13 -30 L13 -30 L19 2 L-18 2Z" fill="#e0a43e"/>
+                <path d="M-8 0 L-15 22 M9 0 L20 19" stroke="#d7bd83" strokeWidth="9" strokeLinecap="round"/>
+                <path className="hero-art-arm arm-left" d="M-11 -27 L-27 -45" stroke="#98603f" strokeWidth="8" strokeLinecap="round"/><path className="hero-art-arm arm-right" d="M11 -27 L27 -43" stroke="#98603f" strokeWidth="8" strokeLinecap="round"/>
+              </g>
+              <circle className="hero-art-ball" cx="820" cy="777" r="13" fill="#f4d35e" stroke="#fff0b0" strokeWidth="3"/>
+            </g>
+            <path d="M0 820 Q220 790 420 824 T850 818 T1220 820 T1440 805 V900 H0Z" fill="#153b29" opacity=".88"/>
+            <g fill="#e7bd55" opacity=".9"><circle cx="80" cy="755" r="4"/><circle cx="150" cy="825" r="3"/><circle cx="330" cy="790" r="4"/><circle cx="520" cy="840" r="3"/><circle cx="930" cy="835" r="4"/><circle cx="1050" cy="790" r="3"/><circle cx="1300" cy="830" r="4"/></g>
+          </svg>
+          <div className="hero-scene-vignette" />
         </div>
         <div className="hero-orb hero-orb-one" />
         <div className="hero-orb hero-orb-two" />
