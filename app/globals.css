@@ -529,3 +529,43 @@ header.fixed{z-index:260!important}
 @media(prefers-reduced-motion:reduce){
  .hero-cultural-horizon:after,.hero-cultural-palm,.hero-scene-person,.hero-scene-child,.hero-scene-drum{animation:none!important}
 }
+
+/* Refined hero artwork: illustrated Godavari wedding with expressive, moving people. */
+.hero-cultural-backdrop{
+  opacity:1!important;
+  background:#234b3d!important;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.6),#000 25%,#000 78%,rgba(0,0,0,.75));
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.6),#000 25%,#000 78%,rgba(0,0,0,.75));
+}
+.hero-wedding-art{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.78;filter:saturate(.92)}
+.hero-scene-vignette{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,36,26,.45),rgba(17,42,29,.13) 28%,rgba(17,42,29,.16) 72%,rgba(14,36,26,.45)),linear-gradient(180deg,rgba(14,36,26,.22),transparent 25%,rgba(14,36,26,.08) 58%,rgba(14,36,26,.45));}
+.hero-art-palm{transform-origin:125px 570px;animation:heroPalmSway 6s ease-in-out infinite alternate}
+.hero-art-palm-right{animation-delay:-3s}
+.hero-art-lights{animation:heroLightSwing 5s ease-in-out infinite alternate;transform-origin:720px 150px}
+.hero-art-dancer{transform-box:fill-box;transform-origin:50% 100%;animation:heroDance 1.2s ease-in-out infinite alternate}
+.hero-art-man-one{animation-duration:.78s}
+.hero-art-drummer{animation-delay:-.4s;animation-duration:.68s}
+.hero-art-nadaswaram{animation-delay:-.2s;animation-duration:1.15s}
+.hero-art-woman{animation-delay:-.3s;animation-duration:1.05s}
+.hero-art-woman-two{animation-delay:-.65s;animation-duration:.9s}
+.hero-art-man-chat,.hero-art-man-chat-two{animation-duration:1.8s}
+.hero-art-arm{transform-box:fill-box;transform-origin:10% 50%;animation:heroArmDance .55s ease-in-out infinite alternate}
+.hero-art-arm.arm-right{animation-delay:-.3s}
+.hero-art-drum{transform-box:fill-box;transform-origin:50% 50%;animation:heroDrumBeat .35s ease-in-out infinite alternate}
+.hero-art-child{transform-box:fill-box;transform-origin:50% 100%;animation:heroKidHop .58s ease-in-out infinite alternate}
+.hero-art-child-two{animation-delay:-.27s}
+.hero-art-ball{transform-box:fill-box;transform-origin:center;animation:heroBallBounce .8s ease-in-out infinite alternate}
+@keyframes heroPalmSway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.2deg)}}
+@keyframes heroLightSwing{from{transform:rotate(-.6deg)}to{transform:rotate(.6deg)}}
+@keyframes heroDance{from{translate:0 0;rotate:-2deg}to{translate:0 -5px;rotate:3deg}}
+@keyframes heroArmDance{from{rotate:-10deg}to{rotate:14deg}}
+@keyframes heroDrumBeat{from{rotate:-18deg;scale:1}to{rotate:-7deg;scale:1.05}}
+@keyframes heroKidHop{from{translate:0 0;rotate:-4deg}to{translate:0 -11px;rotate:5deg}}
+@keyframes heroBallBounce{from{translate:-8px -2px}to{translate:10px -26px}}
+@media(max-width:640px){
+ .hero-wedding-art{width:155%;max-width:none;left:-27%;right:auto;opacity:.7}
+ .hero-scene-vignette{background:linear-gradient(90deg,rgba(14,36,26,.5),rgba(17,42,29,.2) 35%,rgba(17,42,29,.22) 65%,rgba(14,36,26,.5)),linear-gradient(180deg,rgba(14,36,26,.3),transparent 22%,rgba(14,36,26,.12) 60%,rgba(14,36,26,.55)}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-art-palm,.hero-art-lights,.hero-art-dancer,.hero-art-arm,.hero-art-drum,.hero-art-child,.hero-art-ball{animation:none!important}
+}
