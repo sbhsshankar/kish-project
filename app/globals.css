@@ -123,3 +123,87 @@ header.fixed { background:rgba(247,247,233,.9)!important; border-color:#6f8b4b44
 /* Interaction fixes: responsive galleries, touch-friendly date picker, wedding opening */
 .destination-feature{min-width:0;align-self:start}.destination-mini-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:10px;margin-top:8px;border:1px solid #8ca56a66;border-radius:18px;background:#f9f8ec;animation:fadeUp .35s ease-out}.destination-mini-photo{display:flex;min-width:0;flex-direction:column;overflow:hidden;border:1px solid #a8bb91;border-radius:12px;background:#e5ecd9;text-align:left}.destination-mini-photo img{display:block;width:100%;height:118px;object-fit:cover;transition:transform .35s}.destination-mini-photo:hover img{transform:scale(1.04)}.destination-mini-photo span{padding:7px 8px 0;color:#2e5836;font-size:11px;font-weight:700}.destination-mini-photo i{padding:2px 8px 8px;color:#997516;font-size:10px;font-style:normal}.destination-mini-gallery .gold-button{grid-column:1/-1}.photo-lightbox{position:fixed;inset:0;z-index:250;display:flex;align-items:center;justify-content:center;gap:16px;padding:56px 18px 24px;background:rgba(8,22,12,.94);backdrop-filter:blur(12px);animation:fadeUp .2s ease-out}.lightbox-figure{display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(100%,1000px);height:100%;margin:0;min-width:0}.lightbox-figure img{display:block;width:100%;height:min(72vh,720px);object-fit:contain;border-radius:14px;box-shadow:0 20px 80px #0008}.lightbox-figure figcaption{display:flex;flex-direction:column;gap:5px;width:100%;max-width:900px;padding:14px 4px;color:#fff7d0}.lightbox-figure figcaption span{color:#e9c64d;font-size:10px;letter-spacing:.2em;text-transform:uppercase}.lightbox-figure figcaption strong{font-size:18px}.lightbox-close{position:absolute;top:14px;right:18px;z-index:2;width:44px;height:44px;border:1px solid #f6d76a77;border-radius:50%;background:#23492e;color:#fff7d0;font-size:30px;line-height:1}.lightbox-arrow{flex:none;width:42px;height:52px;border:1px solid #f6d76a77;border-radius:999px;background:#23492e;color:#fff7d0;font-size:32px;line-height:1}.date-field input[type=date]{min-height:52px;width:100%;max-width:100%;font-size:16px;line-height:1.4;padding:12px 10px;touch-action:manipulation;-webkit-appearance:auto;appearance:auto;color-scheme:light;border:1px solid #9db484;border-radius:12px;background:#fffdf3;color:#244a2d}.date-field{min-width:0}.date-field input::-webkit-date-and-time-value{text-align:left}.site-intro-wedding{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}.wedding-hangings{position:absolute;top:0;left:8%;right:8%;height:22%;border-top:2px solid #c49a32;display:flex;justify-content:space-around}.wedding-hangings span{width:2px;height:100%;background:linear-gradient(#bd8a22,#6e8b43);position:relative}.wedding-hangings span:after{content:"✿";position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);color:#c18b20;font-size:19px}.wedding-stage{position:absolute;bottom:-2%;left:0;right:0;height:20%;background:linear-gradient(180deg,#789a53aa,#3d6b3cdd);clip-path:polygon(0 40%,18% 15%,35% 40%,50% 0,65% 40%,82% 15%,100% 40%,100% 100%,0 100%);opacity:.45}.wedding-music{position:absolute;left:0;right:0;bottom:22%;display:flex;justify-content:center;gap:22px;color:#9b751b;font-size:clamp(20px,4vw,34px);opacity:0;animation:musicEntrance 1s 1.2s ease-out forwards}.wedding-music span{display:inline-block;animation:musicDance 1.2s ease-in-out infinite alternate}.wedding-music span:nth-child(2){animation-delay:.2s}.wedding-music span:nth-child(3){animation-delay:.4s}.site-intro{isolation:isolate}.site-intro-title,.site-intro-sub,.site-intro-line,.site-intro-wordmark,.site-intro-mark{z-index:2}.site-intro:after{z-index:1}@keyframes musicEntrance{from{opacity:0;transform:translateY(15px)}to{opacity:.9;transform:none}}@keyframes musicDance{from{transform:translateY(0) rotate(-8deg)}to{transform:translateY(-8px) rotate(8deg)}}
 @media(max-width:640px){.destination-mini-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:8px}.destination-mini-photo img{height:105px}.photo-lightbox{gap:7px;padding:62px 8px 14px}.lightbox-figure img{height:min(65vh,560px);object-fit:contain}.lightbox-arrow{width:32px;height:44px;font-size:26px}.lightbox-figure figcaption{padding:10px 4px}.lightbox-figure figcaption strong{font-size:15px}.date-field input[type=date]{min-height:54px;padding:12px 8px;font-size:16px}}
+
+
+/* Unified bright Godavari palette — keep every section in the same visual world */
+:root{--sandadi-forest:#214d30;--sandadi-leaf:#547c3b;--sandadi-gold:#d6a323;--sandadi-sun:#ffe27a;--sandadi-ivory:#fbfaee;--sandadi-ink:#29482f}
+body,main{background:var(--sandadi-ivory);color:var(--sandadi-ink)}
+main.min-h-screen{background:var(--sandadi-ivory)!important;color:var(--sandadi-ink)!important}
+header.fixed{background:rgba(251,250,238,.94)!important;border-color:#819b6548!important;box-shadow:0 8px 28px #244b2d0a}
+header .telugu-logo{color:var(--sandadi-forest)}
+.nav-link,header nav button{color:#315c37!important}
+.gold-button{background:linear-gradient(135deg,#ffe78c,#e6b82c 55%,#c99518)!important;color:#244628!important;border:1px solid #c99518!important;box-shadow:0 10px 28px #b68a201e}
+.outline-button{border-color:#78975c!important;color:#315c37!important;background:#fffdf1cc!important}
+.hero{background:radial-gradient(ellipse at 50% 75%,#d7e8c4 0%,transparent 45%),radial-gradient(circle at 75% 15%,#ffe8a4 0%,transparent 28%),linear-gradient(145deg,#f9f8e9 0%,#e8f1dc 48%,#fff0bd 100%)!important}
+.hero .text-\\[\\#EADBB8\\],.hero p{color:#4e6946}
+.hero .text-\\[\\#C9BD9B\\]{color:#edf2dc}
+.hero .text-\\[\\#F2D47A\\],.hero .text-\\[\\#FFD34E\\]{color:#876311}
+.section-shell{background:transparent;color:#29482f}
+.section-shell:nth-of-type(even){background:linear-gradient(180deg,#eef3e4aa,#fbfaeeaa)}
+.section-heading,.section-title{color:#254a2f!important}
+.section-copy,.section-shell p{color:#536b4b}
+.choice-card,.service-card,.package-card,.film-card{background:linear-gradient(145deg,#fffef5,#eaf2df)!important;border-color:#8ca56a66!important;color:#315637}
+.choice-name,.package-card h3,.service-card h3{color:#294c30!important}
+.choice-sub,.package-card p,.service-card p{color:#617657!important}
+.destination-card{box-shadow:0 14px 35px #284d2814;border-color:#f9f5df}
+.kobbari-story{background:linear-gradient(145deg,#f8f8eb,#e2eed7)!important;color:#29482f}
+.kobbari-story p{color:#536b4b!important}
+.photo-gallery,.destination-mini-gallery{background:#f6f6e8}
+.planner-panel{background:linear-gradient(145deg,#fffdf0,#e6efd9)!important;color:#29482f}
+.planner-panel h2,.planner-panel h3{color:#244a2d!important}
+.planner-grid label{color:#45613c!important}
+.planner-grid input,.planner-grid select,.date-field input[type=date]{background:#fffef5!important;color:#244a2d!important;border-color:#9db484!important;color-scheme:light}
+.tag,.service-pill{background:#fffdf3!important;color:#45613c!important;border-color:#a3b88b!important}
+.text-\\[\\#FFF7D0\\],.text-\\[\\#FFF1B0\\],.text-\\[\\#EADBB8\\]{color:#29482f}
+.site-intro{background:#f5f4df!important}
+.previous-work-section{background:linear-gradient(180deg,#e7efd9aa,#f8f7e9)!important}
+.gold-dust{opacity:.12}
+
+/* Cinematic Kobbari Thota garden-event opening: wide layered landscape, no emoji */
+.intro-cinematic-scene{position:absolute;inset:0;overflow:hidden;isolation:isolate;background:#173c2b;animation:sceneReveal 4.2s ease-out both}
+.intro-sky{position:absolute;inset:0;background:linear-gradient(180deg,#4b9d9a 0%,#a9d7ad 34%,#f6d58b 60%,#6e9a54 100%);animation:skyDrift 12s ease-in-out infinite alternate}
+.intro-sun{position:absolute;left:69%;top:23%;width:clamp(90px,14vw,190px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff7c8 0%,#ffe68b 35%,#ffce5a 58%,#ffc95a00 72%);filter:blur(1px);box-shadow:0 0 90px #ffeaa477;animation:sunBreathe 5s ease-in-out infinite}
+.intro-water{position:absolute;left:-5%;right:-5%;top:46%;height:22%;background:linear-gradient(180deg,#77b8a0aa,#438e83dd 35%,#236b63 70%,#1c574b);clip-path:polygon(0 18%,100% 0,100% 100%,0 88%);animation:waterGlide 9s ease-in-out infinite alternate}
+.intro-water:after{content:"";position:absolute;inset:15% -20%;background:repeating-linear-gradient(175deg,transparent 0 15px,#fff4c866 16px 18px,transparent 19px 32px);opacity:.55;animation:waterShimmer 5s linear infinite}
+.intro-garden{position:absolute;left:-5%;right:-5%;bottom:15%;height:36%;background:linear-gradient(180deg,#8bb36b,#3e7545 65%,#244d35);clip-path:polygon(0 35%,12% 12%,25% 31%,39% 8%,51% 30%,67% 9%,79% 28%,91% 12%,100% 33%,100% 100%,0 100%)}
+.intro-garden-back{bottom:23%;height:30%;opacity:.7;filter:blur(2px);transform:translateX(-2%);animation:gardenSway 11s ease-in-out infinite alternate}
+.intro-event-lawn{position:absolute;bottom:-8%;left:-5%;right:-5%;height:37%;background:linear-gradient(180deg,#74a34f,#32643b 78%);clip-path:polygon(0 25%,100% 0,100% 100%,0 100%);transform:scale(1.05)}
+.intro-palm{position:absolute;bottom:16%;width:clamp(100px,19vw,250px);height:56%;z-index:2;transform-origin:bottom center;animation:palmSway 6s ease-in-out infinite alternate}
+.intro-palm-left{left:-1%;transform:rotate(-5deg)}.intro-palm-right{right:-1%;transform:scaleX(-1) rotate(-4deg);animation-delay:-2s}
+.intro-palm i{position:absolute;left:48%;bottom:0;width:clamp(9px,1.2vw,16px);height:95%;background:linear-gradient(90deg,#193f2a,#6e8c4b,#244b30);border-radius:80% 20% 0 0;transform:rotate(7deg)}
+.intro-palm b,.intro-palm em{position:absolute;left:48%;top:0;width:clamp(85px,16vw,210px);height:clamp(50px,9vw,120px);background:repeating-conic-gradient(from 185deg at 0 100%,#173c29 0deg 7deg,#386b3b 8deg 13deg,transparent 14deg 17deg);clip-path:polygon(0 100%,5% 63%,18% 27%,42% 0,100% 10%,74% 31%,48% 54%,20% 80%);transform-origin:0 100%;filter:drop-shadow(0 4px 2px #14351d55)}
+.intro-palm em{transform:rotate(70deg);filter:brightness(1.18)}.intro-palm b{transform:rotate(-42deg)}
+.intro-coconut-row{position:absolute;left:4%;right:3%;bottom:19%;height:24%;z-index:2;background:radial-gradient(ellipse at 8% 100%,#173e2a 0 12%,transparent 13%),radial-gradient(ellipse at 19% 100%,#245735 0 14%,transparent 15%),radial-gradient(ellipse at 78% 100%,#1d4b2e 0 13%,transparent 14%),radial-gradient(ellipse at 91% 100%,#214e31 0 16%,transparent 17%);opacity:.95}
+.intro-event-canopy{position:absolute;z-index:3;left:29%;right:29%;bottom:24%;height:27%;background:linear-gradient(90deg,#f2c84f,#fff0a8 25%,#fff9d7 50%,#e7b936 76%,#f9df7a);clip-path:polygon(0 24%,50% 0,100% 24%,93% 100%,7% 100%);filter:drop-shadow(0 10px 20px #143b2666);animation:canopyBreathe 5s ease-in-out infinite alternate}
+.intro-event-canopy:before{content:"";position:absolute;inset:20% 8% 0;background:repeating-linear-gradient(90deg,#fff5c9 0 9%,#d9a52c 10% 12%,#fff0a4 13% 22%);opacity:.72}
+.intro-event-canopy span{position:absolute;top:0;bottom:0;width:3px;background:#fef0ad;box-shadow:0 0 12px #fff4b8}.intro-event-canopy span:nth-child(1){left:20%}.intro-event-canopy span:nth-child(2){left:50%}.intro-event-canopy span:nth-child(3){left:80%}
+.intro-festoon-lights{position:absolute;z-index:5;left:22%;right:22%;bottom:48%;height:12%;border-top:2px solid #f8d879;display:flex;justify-content:space-around;transform:rotate(-2deg)}
+.intro-festoon-lights i{width:5px;height:5px;border-radius:50%;margin-top:12px;background:#fff5b0;box-shadow:0 0 9px 4px #ffe98b;animation:festoonTwinkle 1.5s ease-in-out infinite alternate}.intro-festoon-lights i:nth-child(even){animation-delay:.6s}
+.intro-stage{position:absolute;z-index:4;bottom:15%;left:32%;right:32%;height:12%;background:linear-gradient(180deg,#d3a431,#a66c20 40%,#70421e);border:2px solid #f6d878;box-shadow:0 0 40px #ffdc6b66}
+.intro-stage-glow{position:absolute;inset:-100% -15% 0;background:radial-gradient(ellipse at 50% 100%,#ffe78588,transparent 65%);animation:stageGlow 3s ease-in-out infinite alternate}
+.intro-stage-floral{position:absolute;inset:-12px 0 auto;height:15px;background:repeating-radial-gradient(circle at 8px 7px,#fff1a6 0 4px,#db9c2a 5px 7px,transparent 8px 16px)}
+.intro-guest{position:absolute;z-index:6;bottom:11%;width:clamp(8px,1.4vw,17px);height:clamp(20px,3.8vw,45px);border-radius:50% 50% 15% 15%;background:linear-gradient(90deg,#183a2b,#376849);filter:drop-shadow(0 2px 2px #142e1d66);animation:guestMove 2.8s ease-in-out infinite alternate}
+.intro-guest:before{content:"";position:absolute;top:-10px;left:20%;width:60%;aspect-ratio:1;border-radius:50%;background:#9a613b}
+.guest-one{left:23%;animation-delay:-.7s}.guest-two{left:28%;bottom:13%;animation-delay:-1.3s}.guest-three{right:23%;animation-delay:-1.8s}.guest-four{right:28%;bottom:13%;animation-delay:-.2s}.guest-five{left:50%;bottom:8%;animation-delay:-1.1s}
+.intro-floating-petals{position:absolute;inset:0;z-index:8;pointer-events:none}.intro-floating-petals i{position:absolute;top:-5%;left:calc((var(--petal,1) * 7%) + 2%);width:7px;height:12px;border-radius:80% 10% 80% 10%;background:#ffe18b;box-shadow:0 0 8px #fff3b855;animation:petalFall 7s linear infinite;opacity:0}.intro-floating-petals i:nth-child(1){left:8%;animation-delay:-1s}.intro-floating-petals i:nth-child(2){left:17%;animation-delay:-4s}.intro-floating-petals i:nth-child(3){left:29%;animation-delay:-2s}.intro-floating-petals i:nth-child(4){left:37%;animation-delay:-5s}.intro-floating-petals i:nth-child(5){left:48%;animation-delay:-3s}.intro-floating-petals i:nth-child(6){left:58%;animation-delay:-6s}.intro-floating-petals i:nth-child(7){left:68%;animation-delay:-2.5s}.intro-floating-petals i:nth-child(8){left:78%;animation-delay:-4.5s}.intro-floating-petals i:nth-child(9){left:87%;animation-delay:-3.5s}.intro-floating-petals i:nth-child(10){left:95%;animation-delay:-5.5s}.intro-floating-petals i:nth-child(11){left:42%;animation-delay:-1.5s}.intro-floating-petals i:nth-child(12){left:73%;animation-delay:-.5s}
+.intro-scene-haze{position:absolute;z-index:7;inset:0;background:linear-gradient(180deg,#164b4033,#f8d78a11 45%,#173d2a55 100%);mix-blend-mode:screen;pointer-events:none}
+.site-intro-title,.site-intro-mark,.site-intro-sub,.site-intro-line,.site-intro-wordmark{z-index:10;text-shadow:0 2px 20px #fff4bd99}
+.site-intro-title{color:#fff8d4!important;-webkit-text-fill-color:#fff8d4!important;background:none!important;font-size:clamp(4.3rem,12vw,7.8rem);text-shadow:0 3px 0 #7c531b,0 8px 35px #123b28cc!important}
+.site-intro-mark{color:#ffe38b!important;text-shadow:0 0 20px #ffe38b}
+.site-intro-sub{color:#fff6cf!important;text-shadow:0 2px 12px #173d2c}
+.site-intro-line{background:#fff0aa77!important}.site-intro-line span{background:#ffe68b!important;box-shadow:0 0 20px #fff1aa!important}
+.site-intro-wordmark{color:#fff4c2!important;text-shadow:0 2px 12px #173d2c}
+@keyframes sceneReveal{0%{transform:scale(1.12);filter:saturate(.75) brightness(.75)}45%{filter:saturate(1.15) brightness(1)}100%{transform:scale(1);filter:saturate(1.05) brightness(1)}}
+@keyframes skyDrift{from{transform:scale(1) translateX(-1%)}to{transform:scale(1.07) translateX(1%)}}
+@keyframes sunBreathe{0%,100%{transform:scale(.94);opacity:.8}50%{transform:scale(1.08);opacity:1}}
+@keyframes waterGlide{from{transform:translateX(-1%) scaleX(1)}to{transform:translateX(1%) scaleX(1.03)}}
+@keyframes waterShimmer{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
+@keyframes gardenSway{from{transform:translateX(-2%) scale(1)}to{transform:translateX(2%) scale(1.02)}}
+@keyframes palmSway{from{rotate:-1deg}to{rotate:2deg}}
+@keyframes canopyBreathe{from{filter:brightness(.95) drop-shadow(0 8px 14px #143b2655)}to{filter:brightness(1.12) drop-shadow(0 12px 24px #143b2688)}}
+@keyframes festoonTwinkle{from{opacity:.45;box-shadow:0 0 5px 2px #ffe98b}to{opacity:1;box-shadow:0 0 12px 6px #fff5b0}}
+@keyframes stageGlow{from{opacity:.45}to{opacity:1}}
+@keyframes guestMove{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+@keyframes petalFall{0%{transform:translate3d(0,-8vh,0) rotate(0);opacity:0}10%{opacity:.85}85%{opacity:.8}100%{transform:translate3d(5vw,110vh,0) rotate(520deg);opacity:0}}
+@media(max-width:640px){.intro-event-canopy{left:17%;right:17%;bottom:25%;height:23%}.intro-stage{left:23%;right:23%;bottom:15%}.intro-festoon-lights{left:15%;right:15%;bottom:47%}.intro-palm{height:46%}.intro-palm-left{left:-9%}.intro-palm-right{right:-9%}.intro-coconut-row{bottom:20%}.site-intro-title{font-size:4.5rem}.site-intro-wordmark{letter-spacing:.2em}.intro-guest{bottom:10%}}
+@media(prefers-reduced-motion:reduce){.intro-cinematic-scene,.intro-sky,.intro-water,.intro-palm,.intro-floating-petals i,.intro-event-canopy,.intro-festoon-lights i,.intro-guest{animation:none!important}}
