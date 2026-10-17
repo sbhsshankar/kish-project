@@ -179,7 +179,22 @@ export default function Home() {
       {introVisible && (
         <div className="site-intro" aria-label="Opening Sandadi">
           <div className="site-intro-glow" />
-          <div className="site-intro-wedding" aria-hidden="true"><div className="wedding-hangings"><span /><span /><span /><span /><span /><span /><span /><span /><span /></div><div className="wedding-stage" /><div className="wedding-music"><span>🥁</span><span>🎺</span><span>🌼</span></div></div>
+          <div className="intro-cinematic-scene" aria-hidden="true">
+            <div className="intro-sky" />
+            <div className="intro-sun" />
+            <div className="intro-water" />
+            <div className="intro-garden intro-garden-back" />
+            <div className="intro-palm intro-palm-left"><i /><b /><em /></div>
+            <div className="intro-palm intro-palm-right"><i /><b /><em /></div>
+            <div className="intro-coconut-row" />
+            <div className="intro-event-lawn" />
+            <div className="intro-event-canopy"><span /><span /><span /></div>
+            <div className="intro-festoon-lights"><i /><i /><i /><i /><i /><i /><i /><i /></div>
+            <div className="intro-stage"><span className="intro-stage-glow" /><span className="intro-stage-floral" /></div>
+            <div className="intro-guest guest-one" /><div className="intro-guest guest-two" /><div className="intro-guest guest-three" /><div className="intro-guest guest-four" /><div className="intro-guest guest-five" />
+            <div className="intro-floating-petals"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
+            <div className="intro-scene-haze" />
+          </div>
           <div className="site-intro-mark">✦</div>
           <div className="telugu-logo site-intro-title" aria-label="సందడి">సందడి</div>
           <div className="site-intro-sub">DESTINATION IN GODAVARI</div>
