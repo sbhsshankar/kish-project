@@ -131,6 +131,7 @@ export default function Home() {
   const [plannerOpen, setPlannerOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [introVisible, setIntroVisible] = useState(true);
+  const [showScrollCue, setShowScrollCue] = useState(true);
   const [galleryOpen, setGalleryOpen] = useState<string | null>(null);
   const [activePhoto, setActivePhoto] = useState<{ src: string; title: string; destination: string } | null>(null);
   const [eventDate, setEventDate] = useState("");
@@ -138,6 +139,13 @@ export default function Home() {
   useEffect(() => {
     const timer = window.setTimeout(() => setIntroVisible(false), 4200);
     return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const updateScrollCue = () => setShowScrollCue(window.scrollY < 100);
+    window.addEventListener("scroll", updateScrollCue, { passive: true });
+    updateScrollCue();
+    return () => window.removeEventListener("scroll", updateScrollCue);
   }, []);
 
   const selectedPackage = useMemo(() => packages.find((p) => p.budget === budget), [budget]);
@@ -263,7 +271,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell">
+      {showScrollCue && !introVisible && (
+        <button type="button" className="scroll-explore-cue" onClick={() => scrollToId("idea")} aria-label="Scroll down to explore Sandadi">
+          <span className="scroll-explore-label">SCROLL TO EXPLORE</span>
+          <span className="scroll-explore-arrow" aria-hidden="true">↓</span>
+        </button>
+      )}
+
+      <section id="idea" className="section-shell">
         <div className="mx-auto max-w-4xl text-center">
           <div className="eyebrow">THE IDEA</div>
           <h2 className="section-title">Not just a venue.<br /><span>A place made for your moment.</span></h2>
