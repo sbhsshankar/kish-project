@@ -569,3 +569,7 @@ header.fixed{z-index:260!important}
 @media(prefers-reduced-motion:reduce){
  .hero-art-palm,.hero-art-lights,.hero-art-dancer,.hero-art-arm,.hero-art-drum,.hero-art-child,.hero-art-ball{animation:none!important}
 }
+
+/* Restore the previous simple hero backdrop and remove the dancing SVG artwork. */
+.hero-wedding-art,.hero-scene-vignette{display:none!important}
+.hero-cultural-backdrop{opacity:.34!important;background:linear-gradient(180deg,#d8ead6 0%,#f4e5b9 44%,#c6d8a7 60%,#759b63 100%)!important;-webkit-mask-image:none!important;mask-image:none!important}
