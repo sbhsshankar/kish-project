@@ -378,3 +378,43 @@ header.fixed{z-index:260!important}
  .destination-mini-photo img{height:105px!important}
 }
 
+
+
+/* Expanded destination gallery: use the full content width instead of squeezing five photos inside one destination card. */
+.destination-feature:has(.destination-mini-gallery){
+  grid-column:1 / -1;
+  width:100%;
+}
+.destination-feature:has(.destination-mini-gallery) > .destination-card{
+  min-height:230px;
+}
+.destination-feature:has(.destination-mini-gallery) .destination-mini-gallery{
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:14px!important;
+  padding:16px!important;
+}
+.destination-feature:has(.destination-mini-gallery) .destination-mini-photo img{
+  height:clamp(190px,19vw,290px)!important;
+}
+.destination-feature:has(.destination-mini-gallery) .destination-mini-photo span{
+  padding:11px 12px 12px!important;
+  font-size:13px!important;
+}
+@media(max-width:900px){
+  .destination-feature:has(.destination-mini-gallery) .destination-mini-gallery{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  .destination-feature:has(.destination-mini-gallery) .destination-mini-photo img{
+    height:clamp(150px,22vw,220px)!important;
+  }
+}
+@media(max-width:640px){
+  .destination-feature:has(.destination-mini-gallery) .destination-mini-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:9px!important;
+    padding:10px!important;
+  }
+  .destination-feature:has(.destination-mini-gallery) .destination-mini-photo img{
+    height:140px!important;
+  }
+}
