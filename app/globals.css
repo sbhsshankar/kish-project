@@ -651,3 +651,127 @@ header.fixed{z-index:260!important}
 @media(prefers-reduced-motion:reduce){
  .cinematic-festival .cinematic-dancer,.cinematic-dancer *{animation:none!important}
 }
+
+
+/* Hero background: still, recognizable Godavari landscape. All scenery is intentionally static. */
+.hero-cultural-backdrop{
+  opacity:1!important;
+  background:linear-gradient(180deg,#a9d4ca 0%,#e8e1b5 40%,#8dbbaa 58%,#3e8377 100%)!important;
+  -webkit-mask-image:none!important;mask-image:none!important;
+}
+.hero-cultural-backdrop *{animation:none!important;transition:none!important}
+.godavari-sun{
+  position:absolute;left:66%;top:13%;width:clamp(74px,10vw,138px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 38% 34%,#fff9d2 0%,#ffeaa0 45%,#f5c35e 72%,#f5c35e00 74%);
+  box-shadow:0 0 45px #ffeaa055;
+}
+.godavari-river{
+  position:absolute;left:0;right:0;top:49%;height:37%;
+  background:linear-gradient(180deg,#76b8ad 0%,#4b9b91 36%,#2e766e 100%);
+  clip-path:polygon(0 14%,16% 2%,35% 12%,52% 0,73% 10%,100% 2%,100% 100%,0 100%);
+}
+.godavari-river-glint{
+  position:absolute;left:0;right:0;top:57%;height:21%;
+  background:repeating-linear-gradient(176deg,transparent 0 13px,#e5f1d277 14px 16px,transparent 17px 29px);
+  opacity:.5;
+}
+.godavari-bank{position:absolute;bottom:0;height:37%;background:linear-gradient(180deg,#7eaa76,#315f42)}
+.godavari-bank-left{left:0;width:30%;clip-path:polygon(0 6%,100% 43%,100% 100%,0 100%)}
+.godavari-bank-right{right:0;width:27%;clip-path:polygon(0 42%,100% 0,100% 100%,0 100%)}
+.godavari-bridge{
+  position:absolute;z-index:2;left:17%;right:15%;top:43%;height:12%;
+  border-top:clamp(5px,.65vw,9px) solid #e7dfbb;
+  filter:drop-shadow(0 2px 1px #31584c66);
+}
+.godavari-bridge:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:100%;
+  background:repeating-linear-gradient(90deg,transparent 0 8%,#d5d0b3 8.3% 9.1%,transparent 9.4% 17%);
+  border-top:2px solid #f8edc8;
+}
+.godavari-bridge:after{
+  content:"";position:absolute;left:0;right:0;top:10%;height:9px;
+  background:#d7d0b1;box-shadow:0 3px 0 #4f7664;
+}
+.godavari-bridge span{position:absolute;top:0;height:100%;width:2px;background:#ddd6b8}
+.godavari-bridge span:nth-child(1){left:18%}.godavari-bridge span:nth-child(2){left:36%}.godavari-bridge span:nth-child(3){left:55%}.godavari-bridge span:nth-child(4){left:74%}.godavari-bridge span:nth-child(5){left:92%}
+.godavari-temple{
+  position:absolute;z-index:2;left:11%;top:23%;width:clamp(74px,11vw,145px);height:25%;
+  background:linear-gradient(90deg,#9c6744,#e3b878 45%,#b9824b);
+  clip-path:polygon(0 100%,0 74%,12% 74%,12% 53%,22% 53%,22% 35%,32% 35%,32% 15%,42% 15%,50% 0,58% 15%,68% 15%,68% 35%,78% 35%,78% 53%,88% 53%,88% 74%,100% 74%,100% 100%);
+  filter:drop-shadow(0 3px 4px #244d3b55);
+}
+.godavari-temple:before{
+  content:"";position:absolute;left:45%;top:28%;width:10%;height:72%;
+  background:#6b4831;box-shadow:-22px 17px 0 -2px #6b4831,22px 17px 0 -2px #6b4831;
+}
+.godavari-temple i{position:absolute;bottom:0;width:3px;height:47%;background:#f5d9a0;left:22%}
+.godavari-temple i:nth-child(2){left:49%;height:62%}.godavari-temple i:nth-child(3){left:76%}
+.godavari-temple b{position:absolute;left:46%;top:2%;width:8%;height:11%;border-radius:50%;background:#f4d88e}
+.godavari-palm{position:absolute;z-index:2;bottom:16%;width:clamp(60px,9vw,120px);height:37%}
+.godavari-palm:before{content:"";position:absolute;left:48%;bottom:0;width:7px;height:82%;background:linear-gradient(90deg,#4a633b,#9a9d5c);transform:rotate(4deg);transform-origin:bottom}
+.godavari-palm i{position:absolute;left:48%;top:0;width:50%;height:32%;border-radius:100% 0 100% 0;background:linear-gradient(90deg,#356844,#719458);transform-origin:0 100%}
+.godavari-palm i:nth-child(1){transform:rotate(-158deg) scaleX(1.4)}
+.godavari-palm i:nth-child(2){transform:rotate(-122deg) scaleX(1.45)}
+.godavari-palm i:nth-child(3){transform:rotate(-78deg) scaleX(1.5)}
+.godavari-palm i:nth-child(4){transform:rotate(-38deg) scaleX(1.4)}
+.godavari-palm i:nth-child(5){transform:rotate(2deg) scaleX(1.35)}
+.godavari-palm-left{left:-1%}.godavari-palm-right{right:0;transform:scaleX(-1)}
+.hero-orb{display:none!important}
+
+/* A separate compact scene below the hero: animated green pandhiri being prepared. */
+.pandhiri-setup-strip{
+  position:relative;z-index:4;padding:0 20px 24px;background:linear-gradient(180deg,#170406 0%,#193e2c 100%);
+}
+.pandhiri-scene{
+  position:relative;max-width:1100px;height:clamp(155px,19vw,220px);margin:0 auto;overflow:hidden;
+  isolation:isolate;border:1px solid #d3b75a55;border-radius:18px;
+  background:linear-gradient(180deg,#b4d7bf 0%,#e7e4bb 56%,#5d9666 57%,#2f6545 100%);
+}
+.pandhiri-sky{position:absolute;inset:0 0 35%;background:linear-gradient(180deg,#8dc4b0,#e4dfad)}
+.pandhiri-back-garden{position:absolute;left:0;right:0;bottom:29%;height:34%;background:#5d9864;clip-path:polygon(0 70%,10% 35%,21% 61%,33% 22%,46% 55%,61% 25%,77% 60%,90% 20%,100% 52%,100% 100%,0 100%)}
+.pandhiri-canopy{
+  position:absolute;left:24%;right:24%;top:15%;height:29%;
+  background:repeating-linear-gradient(90deg,#215c3a 0 9%,#377e4c 9% 18%,#4e955a 18% 27%);
+  border:3px solid #d6c27b;border-bottom:8px solid #f0d77b;
+  clip-path:polygon(0 18%,50% 0,100% 18%,95% 100%,5% 100%);
+  filter:drop-shadow(0 4px 4px #183b2c66);
+}
+.pandhiri-canopy:before{content:"";position:absolute;inset:24% 4% 0;background:repeating-linear-gradient(90deg,#f1d97b 0 5px,transparent 5px 28px);opacity:.65}
+.pandhiri-canopy span{position:absolute;bottom:-10px;width:8px;height:100%;background:#e2c56b}
+.pandhiri-canopy span:nth-child(1){left:5%}.pandhiri-canopy span:nth-child(2){left:27%}.pandhiri-canopy span:nth-child(3){left:49%}.pandhiri-canopy span:nth-child(4){left:71%}.pandhiri-canopy span:nth-child(5){left:93%}
+.pandhiri-frame{position:absolute;top:32%;bottom:15%;width:7px;background:linear-gradient(90deg,#8a6336,#dfc17a,#8a6336);z-index:2}
+.pandhiri-frame.frame-left{left:26%}.pandhiri-frame.frame-right{right:26%}
+.pandhiri-flower-line{position:absolute;z-index:3;left:27%;right:27%;top:34%;height:22%;border-top:2px solid #f0d17a;border-radius:0 0 50% 50%}
+.pandhiri-flower-line i{position:absolute;top:2px;width:8px;height:11px;border-radius:60% 60% 70% 70%;background:#f0b83e;box-shadow:0 4px 0 #f6e2a0}
+.pandhiri-flower-line i:nth-child(1){left:5%}.pandhiri-flower-line i:nth-child(2){left:16%}.pandhiri-flower-line i:nth-child(3){left:27%}.pandhiri-flower-line i:nth-child(4){left:38%}.pandhiri-flower-line i:nth-child(5){left:49%}.pandhiri-flower-line i:nth-child(6){left:60%}.pandhiri-flower-line i:nth-child(7){left:71%}.pandhiri-flower-line i:nth-child(8){left:82%}.pandhiri-flower-line i:nth-child(9){left:93%}
+.pandhiri-stage{position:absolute;left:29%;right:29%;bottom:16%;height:12%;background:linear-gradient(180deg,#dfc07a,#8b603b);border:2px solid #f4df9c;border-radius:4px}
+.pandhiri-chair{position:absolute;bottom:28%;width:25px;height:29px;border:3px solid #c6a568;border-bottom-width:5px;border-radius:4px 4px 0 0;background:#d4bd83}
+.chair-one{left:34%}.chair-two{left:47%}.chair-three{right:34%}
+.pandhiri-floor{position:absolute;bottom:0;left:0;right:0;height:17%;background:linear-gradient(180deg,#538b58,#28593c)}
+.setup-person{position:absolute;z-index:5;bottom:12%;width:clamp(22px,3vw,32px);height:39%;transform-origin:50% 100%;animation:setupWalk 2.4s ease-in-out infinite}
+.setup-head{position:absolute;left:29%;top:0;width:42%;aspect-ratio:1;border-radius:50%;background:#a96e48;box-shadow:0 -3px 0 2px #29251b}
+.setup-body{position:absolute;left:15%;top:25%;width:70%;height:43%;border-radius:9px 9px 3px 3px;background:linear-gradient(90deg,#b84b42,#e5a34f)}
+.setup-arm{position:absolute;left:48%;top:28%;width:17%;height:42%;border-radius:99px;background:#c68c60;transform-origin:top;animation:setupDecorate .9s ease-in-out infinite alternate}
+.setup-leg{position:absolute;left:27%;top:65%;width:18%;height:33%;background:#4b4531;box-shadow:10px 0 #4b4531}
+.setup-person-one{left:18%;animation-delay:-.8s}.setup-person-one .setup-body{background:linear-gradient(90deg,#225c43,#6ca35c)}
+.setup-person-two{right:17%;animation-delay:-1.3s}.setup-person-two .setup-body{background:linear-gradient(90deg,#8e2c55,#df6380)}
+.setup-person-three{left:42%;height:31%;animation-delay:-.4s}.setup-person-three .setup-body{background:linear-gradient(90deg,#295d84,#64a7bd)}
+@keyframes setupWalk{0%,100%{translate:0 0;rotate:-3deg}45%{translate:14px -2px;rotate:3deg}70%{translate:7px 0;rotate:-1deg}}
+@keyframes setupDecorate{from{rotate:-28deg}to{rotate:38deg}}
+.setup-label{position:absolute;z-index:8;left:0;right:0;bottom:5px;text-align:center;font-size:clamp(8px,1vw,11px);font-weight:800;letter-spacing:.22em;color:#fff5c8;text-shadow:0 2px 5px #183b2b}
+@media(max-width:640px){
+ .godavari-temple{left:5%;top:27%;width:78px;height:20%}
+ .godavari-sun{left:69%;top:15%;width:66px}
+ .godavari-bridge{left:11%;right:9%;top:46%}
+ .godavari-palm{height:28%;bottom:13%}
+ .pandhiri-setup-strip{padding:0 12px 18px}
+ .pandhiri-scene{height:155px}
+ .pandhiri-canopy{left:17%;right:17%;top:17%;height:30%}
+ .pandhiri-frame.frame-left{left:20%}.pandhiri-frame.frame-right{right:20%}
+ .pandhiri-flower-line{left:20%;right:20%}
+ .pandhiri-stage{left:23%;right:23%}
+ .setup-person-one{left:7%}.setup-person-two{right:7%}.setup-person-three{left:40%}
+ .pandhiri-chair.chair-one{left:28%}.pandhiri-chair.chair-two{left:47%}.pandhiri-chair.chair-three{right:28%}
+ .setup-label{letter-spacing:.1em}
+}
+@media(prefers-reduced-motion:reduce){.setup-person,.setup-arm{animation:none!important}}
